@@ -1,3 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Debug="true"
-    Service="ProvVe.MachineService.Service.Service1"
-    CodeBehind="Service1.svc.cs" %>
