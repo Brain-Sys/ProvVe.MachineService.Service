@@ -6,18 +6,34 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 using System.Threading;
+using ProvVe.MachineService.NetworkMessages.Requests;
+using ProvVe.MachineService.NetworkMessages.Responses;
 
 namespace ProvVe.MachineService.Service
 {
     public class DeviceService : IDeviceService
     {
-        public DateTime Ping()
+        private void debug()
         {
 #if DEBUG
-            Thread.Sleep(10000);
+            Thread.Sleep(5000);
 #endif
+        }
 
+        public DateTime Ping()
+        {
+            debug();
             return DateTime.Now;
+        }
+
+        public ResetResponse Reset(ResetRequest input)
+        {
+            debug();
+
+            ResetResponse response = new ResetResponse();
+            response.Success = true;
+
+            return response;
         }
     }
 }

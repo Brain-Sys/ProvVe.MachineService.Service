@@ -9,7 +9,101 @@
 //------------------------------------------------------------------------------
 
 namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ResetRequest", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Req" +
+        "uests")]
+    [System.SerializableAttribute()]
+    public partial class ResetRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int MachineIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int MachineId {
+            get {
+                return this.MachineIdField;
+            }
+            set {
+                if ((this.MachineIdField.Equals(value) != true)) {
+                    this.MachineIdField = value;
+                    this.RaisePropertyChanged("MachineId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ResetResponse", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Res" +
+        "ponses")]
+    [System.SerializableAttribute()]
+    public partial class ResetResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool SuccessField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Success {
+            get {
+                return this.SuccessField;
+            }
+            set {
+                if ((this.SuccessField.Equals(value) != true)) {
+                    this.SuccessField = value;
+                    this.RaisePropertyChanged("Success");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="DeviceService.IDeviceService")]
@@ -20,6 +114,12 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeviceService/Ping", ReplyAction="http://tempuri.org/IDeviceService/PingResponse")]
         System.Threading.Tasks.Task<System.DateTime> PingAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeviceService/Reset", ReplyAction="http://tempuri.org/IDeviceService/ResetResponse")]
+        ProvVe.MachineService.ModernWindowsApp.DeviceService.ResetResponse Reset(ProvVe.MachineService.ModernWindowsApp.DeviceService.ResetRequest input);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeviceService/Reset", ReplyAction="http://tempuri.org/IDeviceService/ResetResponse")]
+        System.Threading.Tasks.Task<ProvVe.MachineService.ModernWindowsApp.DeviceService.ResetResponse> ResetAsync(ProvVe.MachineService.ModernWindowsApp.DeviceService.ResetRequest input);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,6 +155,14 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
         
         public System.Threading.Tasks.Task<System.DateTime> PingAsync() {
             return base.Channel.PingAsync();
+        }
+        
+        public ProvVe.MachineService.ModernWindowsApp.DeviceService.ResetResponse Reset(ProvVe.MachineService.ModernWindowsApp.DeviceService.ResetRequest input) {
+            return base.Channel.Reset(input);
+        }
+        
+        public System.Threading.Tasks.Task<ProvVe.MachineService.ModernWindowsApp.DeviceService.ResetResponse> ResetAsync(ProvVe.MachineService.ModernWindowsApp.DeviceService.ResetRequest input) {
+            return base.Channel.ResetAsync(input);
         }
     }
 }

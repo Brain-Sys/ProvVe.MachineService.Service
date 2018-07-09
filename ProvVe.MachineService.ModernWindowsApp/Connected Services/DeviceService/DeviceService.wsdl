@@ -4,6 +4,8 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Requests" />
+      <xsd:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Responses" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IDeviceService_Ping_InputMessage">
@@ -12,16 +14,35 @@
   <wsdl:message name="IDeviceService_Ping_OutputMessage">
     <wsdl:part name="parameters" element="tns:PingResponse" />
   </wsdl:message>
+  <wsdl:message name="IDeviceService_Reset_InputMessage">
+    <wsdl:part name="parameters" element="tns:Reset" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceService_Reset_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetResponse" />
+  </wsdl:message>
   <wsdl:portType name="IDeviceService">
     <wsdl:operation name="Ping">
       <wsdl:input wsaw:Action="http://tempuri.org/IDeviceService/Ping" message="tns:IDeviceService_Ping_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDeviceService/PingResponse" message="tns:IDeviceService_Ping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Reset">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDeviceService/Reset" message="tns:IDeviceService_Reset_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDeviceService/ResetResponse" message="tns:IDeviceService_Reset_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IDeviceService" type="tns:IDeviceService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="Ping">
       <soap:operation soapAction="http://tempuri.org/IDeviceService/Ping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reset">
+      <soap:operation soapAction="http://tempuri.org/IDeviceService/Reset" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

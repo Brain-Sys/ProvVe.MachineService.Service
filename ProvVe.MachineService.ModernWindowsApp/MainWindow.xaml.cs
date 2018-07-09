@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProvVe.MachineService.ModernWindowsApp.DeviceService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,11 @@ namespace ProvVe.MachineService.ModernWindowsApp
 
             // Sincrona, da evitare nella UI :-S
             // DateTime today1 = client.Ping();
+
+            ResetRequest request = new ResetRequest();
+            request.MachineId = 6;
+            var response = await client.ResetAsync(request);
+            MessageBox.Show(response.Success.ToString());
 
             DateTime today2 = await client.PingAsync();
             MessageBox.Show(today2.ToString());

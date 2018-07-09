@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
+﻿using ProvVe.MachineService.NetworkMessages.Requests;
+using ProvVe.MachineService.NetworkMessages.Responses;
+using System;
 using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
 
 namespace ProvVe.MachineService.Service
 {
@@ -13,5 +10,9 @@ namespace ProvVe.MachineService.Service
     {
         [OperationContract]
         DateTime Ping();
+
+        // SOA = Service Oriented Architecture
+        [OperationContract]
+        ResetResponse Reset(ResetRequest input);
     }
 }
