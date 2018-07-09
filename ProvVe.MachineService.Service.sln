@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvVe.MachineService.Moder
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvVe.MachineService.NetworkMessages", "ProvVe.MachineService.NetworkMessages\ProvVe.MachineService.NetworkMessages.csproj", "{7E2B1E9F-3C7C-4A63-89D8-65D134968481}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Servers", "Servers", "{0776707B-70B2-4976-AFF1-A05AE8D48079}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

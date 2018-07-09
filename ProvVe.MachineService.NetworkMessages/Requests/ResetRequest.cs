@@ -16,5 +16,13 @@ namespace ProvVe.MachineService.NetworkMessages.Requests
 
         [DataMember]
         public byte MaxRetry { get; set; }
+
+        // Ctor per "forzare" istanze consistenti
+        public ResetRequest(int machineId, string userId)
+        {
+            this.MaxRetry = 3;
+            this.MachineId = machineId;
+            this.UserId = userId;
+        }
     }
 }

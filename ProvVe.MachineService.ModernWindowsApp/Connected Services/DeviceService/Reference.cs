@@ -126,6 +126,7 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
                 if ((this.ActualTimestampField.Equals(value) != true)) {
                     this.ActualTimestampField = value;
                     this.RaisePropertyChanged("ActualTimestamp");
+                    this.RaisePropertyChanged("IsResetRecent");
                 }
             }
         }
