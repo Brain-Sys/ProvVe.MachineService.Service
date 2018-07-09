@@ -17,7 +17,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvVe.MachineService.Windo
 		{5659E8C4-D9FD-483B-AB1C-589A820DD2D5} = {5659E8C4-D9FD-483B-AB1C-589A820DD2D5}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvVe.MachineService.WindowsApp.ViewModels", "ProvVe.MachineService.WindowsApp.ViewModels\ProvVe.MachineService.WindowsApp.ViewModels.csproj", "{12C80DAB-D2F1-4434-BBC1-E3177122B331}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProvVe.MachineService.WindowsApp.ViewModels", "ProvVe.MachineService.WindowsApp.ViewModels\ProvVe.MachineService.WindowsApp.ViewModels.csproj", "{12C80DAB-D2F1-4434-BBC1-E3177122B331}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvVe.MachineService.ModernWindowsApp", "ProvVe.MachineService.ModernWindowsApp\ProvVe.MachineService.ModernWindowsApp.csproj", "{B3226317-7C64-4862-ADF1-AEAC508A33C5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5659E8C4-D9FD-483B-AB1C-589A820DD2D5} = {5659E8C4-D9FD-483B-AB1C-589A820DD2D5}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +46,10 @@ Global
 		{12C80DAB-D2F1-4434-BBC1-E3177122B331}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12C80DAB-D2F1-4434-BBC1-E3177122B331}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12C80DAB-D2F1-4434-BBC1-E3177122B331}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3226317-7C64-4862-ADF1-AEAC508A33C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3226317-7C64-4862-ADF1-AEAC508A33C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3226317-7C64-4862-ADF1-AEAC508A33C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3226317-7C64-4862-ADF1-AEAC508A33C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,6 +58,7 @@ Global
 		{E06A984E-D660-48DB-AE4D-665124AA9544} = {6D7A1BD1-E378-4484-8DE1-D404AC2CC5F9}
 		{13AA7216-6125-4629-AD85-905874BAD689} = {6D7A1BD1-E378-4484-8DE1-D404AC2CC5F9}
 		{12C80DAB-D2F1-4434-BBC1-E3177122B331} = {6D7A1BD1-E378-4484-8DE1-D404AC2CC5F9}
+		{B3226317-7C64-4862-ADF1-AEAC508A33C5} = {6D7A1BD1-E378-4484-8DE1-D404AC2CC5F9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D1CF5662-00DD-452F-99B8-D2089A81B652}

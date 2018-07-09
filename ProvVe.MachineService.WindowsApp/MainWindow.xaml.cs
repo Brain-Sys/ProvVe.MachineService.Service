@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -27,20 +28,21 @@ namespace ProvVe.MachineService.WindowsApp
 
         private void btnCallWcf_Click(object sender, RoutedEventArgs e)
         {
+            int id1 = Thread.CurrentThread.ManagedThreadId;
+
             DeviceServiceClient client = new DeviceServiceClient();
-            client.PingCompleted += Client_PingCompleted;
+            client.PingCompleted += (s2, e2) => {
+                int id2 = Thread.CurrentThread.ManagedThreadId;
+
+                if (e2.Error == null)
+                {
+                    MessageBox.Show(e2.Result.ToString());
+                }
+            };
             client.PingAsync();
 
             //var today = client.Ping();
             //MessageBox.Show(today.ToString());
-        }
-
-        private void Client_PingCompleted(object sender, PingCompletedEventArgs e)
-        {
-            if (e.Error == null)
-            {
-                MessageBox.Show(e.Result.ToString());
-            }
         }
     }
 }
