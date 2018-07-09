@@ -11,6 +11,9 @@ namespace ProvVe.MachineService.NetworkMessages.Responses
         [DataMember]
         public bool Success { get; set; }
 
+        [DataMember]
+        public DateTime ActualTimestamp { get; set; }
+
         //// By default non fa parte del contratto
         //public string XYZ { get; set; }
     }

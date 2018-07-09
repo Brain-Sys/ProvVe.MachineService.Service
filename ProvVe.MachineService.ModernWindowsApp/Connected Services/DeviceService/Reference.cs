@@ -26,6 +26,12 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int MachineIdField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte MaxRetryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UserIdField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -45,6 +51,32 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
                 if ((this.MachineIdField.Equals(value) != true)) {
                     this.MachineIdField = value;
                     this.RaisePropertyChanged("MachineId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte MaxRetry {
+            get {
+                return this.MaxRetryField;
+            }
+            set {
+                if ((this.MaxRetryField.Equals(value) != true)) {
+                    this.MaxRetryField = value;
+                    this.RaisePropertyChanged("MaxRetry");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UserId {
+            get {
+                return this.UserIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserIdField, value) != true)) {
+                    this.UserIdField = value;
+                    this.RaisePropertyChanged("UserId");
                 }
             }
         }
@@ -70,6 +102,9 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ActualTimestampField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool SuccessField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -79,6 +114,19 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ActualTimestamp {
+            get {
+                return this.ActualTimestampField;
+            }
+            set {
+                if ((this.ActualTimestampField.Equals(value) != true)) {
+                    this.ActualTimestampField = value;
+                    this.RaisePropertyChanged("ActualTimestamp");
+                }
             }
         }
         

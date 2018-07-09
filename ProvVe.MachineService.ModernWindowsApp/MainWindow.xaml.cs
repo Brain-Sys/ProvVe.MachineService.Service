@@ -30,11 +30,10 @@ namespace ProvVe.MachineService.ModernWindowsApp
         {
             DeviceService.DeviceServiceClient client = new DeviceService.DeviceServiceClient();
 
-            // Sincrona, da evitare nella UI :-S
-            // DateTime today1 = client.Ping();
-
             ResetRequest request = new ResetRequest();
             request.MachineId = 6;
+            request.UserId = "igord";
+            request.MaxRetry = 3;
             var response = await client.ResetAsync(request);
             MessageBox.Show(response.Success.ToString());
 

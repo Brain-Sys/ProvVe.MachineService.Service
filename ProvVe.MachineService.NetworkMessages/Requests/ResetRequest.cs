@@ -10,5 +10,11 @@ namespace ProvVe.MachineService.NetworkMessages.Requests
     {
         [DataMember]
         public int MachineId { get; set; }
+
+        [DataMember]
+        public string UserId { get; set; }
+
+        [DataMember]
+        public byte MaxRetry { get; set; }
     }
 }
