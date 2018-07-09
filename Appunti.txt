@@ -1,7 +1,7 @@
 No slide
 2 libri pdf dedicati a WCF
 Codice sotto GitHub
-Feedback 1° giorno
+Feedback 1° giorno (https://goo.gl/rfmcVi)
 Feedback mercoledì (ultimo giorno)
 Compilazione registro
 Firme di ingresso ed uscita ogni giorno
@@ -33,6 +33,8 @@ Microsoft.Maps.Qualcosa
 Google.Api.Drive.Models
 ProvVe.MachineService.ConsoleApp
 ProvVe.MachineService.WindowsApp
+ProvVe.MachineService.WindowsServiceHost
+ProvVe.MachineService.ConsoleHost
 ProvVe.MachineService.Service
 ProvVe.MachineService.Interfaces
 ProvVe.MachineService.Repository
