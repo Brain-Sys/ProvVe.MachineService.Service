@@ -28,6 +28,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvVe.MachineService.Netwo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Servers", "Servers", "{0776707B-70B2-4976-AFF1-A05AE8D48079}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{29BEA41D-A38D-4116-BFA6-E380AF4D8EB9}"
+	ProjectSection(SolutionItems) = preProject
+		Appunti.txt = Appunti.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +68,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{5659E8C4-D9FD-483B-AB1C-589A820DD2D5} = {0776707B-70B2-4976-AFF1-A05AE8D48079}
 		{E06A984E-D660-48DB-AE4D-665124AA9544} = {6D7A1BD1-E378-4484-8DE1-D404AC2CC5F9}
 		{13AA7216-6125-4629-AD85-905874BAD689} = {6D7A1BD1-E378-4484-8DE1-D404AC2CC5F9}
 		{12C80DAB-D2F1-4434-BBC1-E3177122B331} = {6D7A1BD1-E378-4484-8DE1-D404AC2CC5F9}

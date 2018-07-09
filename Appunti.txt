@@ -1,0 +1,59 @@
+No slide
+2 libri pdf dedicati a WCF
+Codice sotto GitHub
+Feedback 1° giorno
+Feedback mercoledì (ultimo giorno)
+Compilazione registro
+Firme di ingresso ed uscita ogni giorno
+
+
+
+
+WCF
+Servizio "web" http https tcp
+Software che dialoga con client:
+	- console
+	- app desktop (Windows Forms, WPF)
+	- mobile (Android, iOS)
+Formato XML (SOAP)
+Request & Response
+Gestione delle eccezioni
+Autenticazione / Autorizzazione
+WCF Binding
+	A		address			http:// tcp:// msmq://
+	B		behavior(s)		comportamento(i)
+	C		contract		IQualcosa (interfaccia C#)
+.NET Framework / (PCL) --> .NET Standard
+Evoluzione di WCF è Web Api
+Database (SQL Express, SQLite)
+
+
+NomeCliente.NomeProgetto.NomeLayer
+Microsoft.Maps.Qualcosa
+Google.Api.Drive.Models
+ProvVe.MachineService.ConsoleApp
+ProvVe.MachineService.WindowsApp
+ProvVe.MachineService.Service
+ProvVe.MachineService.Interfaces
+ProvVe.MachineService.Repository
+ProvVe.MachineService.Requests
+ProvVe.MachineService.Responses
+ProvVe.MachineService.NetworkMessages
+ProvVe.MachineService.Dto
+
+Sorgenti su GitHub
+https://github.com/Brain-Sys/ProvVe.MachineService.Service
+
+
+.NET Framework --> .NET Standard 2.0			OK
+450.000 tipi			90%
+
+
+
+
+
+
+
+
+
+
