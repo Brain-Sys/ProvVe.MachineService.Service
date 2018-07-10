@@ -15,18 +15,24 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OpenPortRequest", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Req" +
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequest", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Req" +
         "uests")]
     [System.SerializableAttribute()]
-    public partial class OpenPortRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.ModernWindowsApp.DeviceService.ResetRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.ModernWindowsApp.DeviceService.OpenPortRequest))]
+    public partial class BaseRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        private ProvVe.MachineService.ModernWindowsApp.DeviceService.Ports PortNameField;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ApplicationNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProtocolField;
+        private System.Version ClientVersionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsernameField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -38,80 +44,42 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public ProvVe.MachineService.ModernWindowsApp.DeviceService.Ports PortName {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ApplicationName {
             get {
-                return this.PortNameField;
+                return this.ApplicationNameField;
             }
             set {
-                if ((this.PortNameField.Equals(value) != true)) {
-                    this.PortNameField = value;
-                    this.RaisePropertyChanged("PortName");
+                if ((object.ReferenceEquals(this.ApplicationNameField, value) != true)) {
+                    this.ApplicationNameField = value;
+                    this.RaisePropertyChanged("ApplicationName");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Protocol {
+        public System.Version ClientVersion {
             get {
-                return this.ProtocolField;
+                return this.ClientVersionField;
             }
             set {
-                if ((object.ReferenceEquals(this.ProtocolField, value) != true)) {
-                    this.ProtocolField = value;
-                    this.RaisePropertyChanged("Protocol");
+                if ((object.ReferenceEquals(this.ClientVersionField, value) != true)) {
+                    this.ClientVersionField = value;
+                    this.RaisePropertyChanged("ClientVersion");
                 }
             }
         }
         
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Ports", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Enu" +
-        "merations")]
-    public enum Ports : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        COM1 = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        COM2 = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        COM3 = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        COM4 = 9,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        localhost = 5,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OpenPortResponse", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Res" +
-        "ponses")]
-    [System.SerializableAttribute()]
-    public partial class OpenPortResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Username {
             get {
-                return this.extensionDataField;
+                return this.UsernameField;
             }
             set {
-                this.extensionDataField = value;
+                if ((object.ReferenceEquals(this.UsernameField, value) != true)) {
+                    this.UsernameField = value;
+                    this.RaisePropertyChanged("Username");
+                }
             }
         }
         
@@ -130,10 +98,7 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
     [System.Runtime.Serialization.DataContractAttribute(Name="ResetRequest", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Req" +
         "uests")]
     [System.SerializableAttribute()]
-    public partial class ResetRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+    public partial class ResetRequest : ProvVe.MachineService.ModernWindowsApp.DeviceService.BaseRequest {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int MachineIdField;
@@ -143,16 +108,6 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string UserIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int MachineId {
@@ -192,29 +147,91 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
                 }
             }
         }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ResetResponse", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Res" +
+    [System.Runtime.Serialization.DataContractAttribute(Name="OpenPortRequest", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Req" +
+        "uests")]
+    [System.SerializableAttribute()]
+    public partial class OpenPortRequest : ProvVe.MachineService.ModernWindowsApp.DeviceService.BaseRequest {
+        
+        private ProvVe.MachineService.ModernWindowsApp.DeviceService.Ports PortNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProtocolField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public ProvVe.MachineService.ModernWindowsApp.DeviceService.Ports PortName {
+            get {
+                return this.PortNameField;
+            }
+            set {
+                if ((this.PortNameField.Equals(value) != true)) {
+                    this.PortNameField = value;
+                    this.RaisePropertyChanged("PortName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Protocol {
+            get {
+                return this.ProtocolField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProtocolField, value) != true)) {
+                    this.ProtocolField = value;
+                    this.RaisePropertyChanged("Protocol");
+                }
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Ports", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Enu" +
+        "merations")]
+    public enum Ports : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        COM1 = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        COM2 = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        COM3 = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        COM4 = 9,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        localhost = 5,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponse", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Res" +
         "ponses")]
     [System.SerializableAttribute()]
-    public partial class ResetResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.ModernWindowsApp.DeviceService.ResetResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.ModernWindowsApp.DeviceService.OpenPortResponse))]
+    public partial class BaseResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime ActualTimestampField;
+        private System.Exception ExceptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ExceptionMessageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.TimeSpan IntervalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Version ServerVersionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool SuccessField;
@@ -230,14 +247,53 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime ActualTimestamp {
+        public System.Exception Exception {
             get {
-                return this.ActualTimestampField;
+                return this.ExceptionField;
             }
             set {
-                if ((this.ActualTimestampField.Equals(value) != true)) {
-                    this.ActualTimestampField = value;
-                    this.RaisePropertyChanged("ActualTimestamp");
+                if ((object.ReferenceEquals(this.ExceptionField, value) != true)) {
+                    this.ExceptionField = value;
+                    this.RaisePropertyChanged("Exception");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ExceptionMessage {
+            get {
+                return this.ExceptionMessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExceptionMessageField, value) != true)) {
+                    this.ExceptionMessageField = value;
+                    this.RaisePropertyChanged("ExceptionMessage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.TimeSpan Interval {
+            get {
+                return this.IntervalField;
+            }
+            set {
+                if ((this.IntervalField.Equals(value) != true)) {
+                    this.IntervalField = value;
+                    this.RaisePropertyChanged("Interval");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Version ServerVersion {
+            get {
+                return this.ServerVersionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ServerVersionField, value) != true)) {
+                    this.ServerVersionField = value;
+                    this.RaisePropertyChanged("ServerVersion");
                 }
             }
         }
@@ -263,6 +319,38 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ResetResponse", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Res" +
+        "ponses")]
+    [System.SerializableAttribute()]
+    public partial class ResetResponse : ProvVe.MachineService.ModernWindowsApp.DeviceService.BaseResponse {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ActualTimestampField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ActualTimestamp {
+            get {
+                return this.ActualTimestampField;
+            }
+            set {
+                if ((this.ActualTimestampField.Equals(value) != true)) {
+                    this.ActualTimestampField = value;
+                    this.RaisePropertyChanged("ActualTimestamp");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OpenPortResponse", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Res" +
+        "ponses")]
+    [System.SerializableAttribute()]
+    public partial class OpenPortResponse : ProvVe.MachineService.ModernWindowsApp.DeviceService.BaseResponse {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

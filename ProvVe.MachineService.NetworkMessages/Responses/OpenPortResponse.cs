@@ -6,7 +6,7 @@ using System.Text;
 namespace ProvVe.MachineService.NetworkMessages.Responses
 {
     [DataContract]
-    public class OpenPortResponse
+    public class OpenPortResponse : BaseResponse
     {
 
     }

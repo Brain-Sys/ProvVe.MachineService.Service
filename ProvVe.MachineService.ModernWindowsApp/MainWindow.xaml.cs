@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -30,8 +31,15 @@ namespace ProvVe.MachineService.ModernWindowsApp
         {
             IDeviceService client = new DeviceServiceClient();
 
+
             ResetRequest request = new ResetRequest(6, "igord");
+            request.ApplicationName = "Modern WPF";
+            request.ClientVersion = Assembly.GetExecutingAssembly().GetName().Version;
+            request.Username = "igord";
+
             ResetResponse response = await client.ResetAsync(request);
+            var version = response.ServerVersion;
+            var ts = response.Interval;
             MessageBox.Show(response.Success.ToString());
 
             DateTime today2 = await client.PingAsync();
@@ -42,6 +50,10 @@ namespace ProvVe.MachineService.ModernWindowsApp
             request2.Protocol = "serial";
             OpenPortResponse response2 = await client.OpenPortAsync(request2);
 
+            if (response2.Success)
+            {
+
+            }
         }
     }
 }

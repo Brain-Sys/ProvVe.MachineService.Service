@@ -6,7 +6,7 @@ using System.Text;
 namespace ProvVe.MachineService.NetworkMessages.Requests
 {
     [DataContract]
-    public class ResetRequest
+    public class ResetRequest : BaseRequest
     {
         [DataMember]
         public int MachineId { get; set; }

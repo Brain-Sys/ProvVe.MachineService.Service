@@ -6,11 +6,8 @@ using System.Text;
 namespace ProvVe.MachineService.NetworkMessages.Responses
 {
     [DataContract]
-    public class ResetResponse
+    public class ResetResponse : BaseResponse
     {
-        [DataMember]
-        public bool Success { get; set; }
-
         [DataMember]
         public DateTime ActualTimestamp { get; set; }
 

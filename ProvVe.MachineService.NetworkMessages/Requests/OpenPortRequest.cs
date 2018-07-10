@@ -7,7 +7,7 @@ using System.Text;
 namespace ProvVe.MachineService.NetworkMessages.Requests
 {
     [DataContract]
-    public class OpenPortRequest
+    public class OpenPortRequest : BaseRequest
     {
         [DataMember(Name = "PortName", IsRequired = true)]
         public Ports Name { get; set; }
