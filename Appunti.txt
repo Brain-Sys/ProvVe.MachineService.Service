@@ -7,6 +7,9 @@ Compilazione registro
 Firme di ingresso ed uscita ogni giorno
 
 
+DOCENTE : IGOR DAMIANI
+TITOLO : SVILUPPARE APPLICAZIONI WCF IN VS2017
+CODICE : OEC215
 
 
 WCF
