@@ -23,7 +23,7 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        private string PortNameField;
+        private ProvVe.MachineService.ModernWindowsApp.DeviceService.Ports PortNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ProtocolField;
@@ -39,12 +39,12 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string PortName {
+        public ProvVe.MachineService.ModernWindowsApp.DeviceService.Ports PortName {
             get {
                 return this.PortNameField;
             }
             set {
-                if ((object.ReferenceEquals(this.PortNameField, value) != true)) {
+                if ((this.PortNameField.Equals(value) != true)) {
                     this.PortNameField = value;
                     this.RaisePropertyChanged("PortName");
                 }
@@ -72,6 +72,27 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Ports", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Enu" +
+        "merations")]
+    public enum Ports : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        COM1 = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        COM2 = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        COM3 = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        COM4 = 9,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        localhost = 5,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]

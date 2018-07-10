@@ -22,6 +22,7 @@
     <MetadataSource Address="http://localhost:56660/DeviceService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
+    <MetadataFile FileName="DeviceService3.xsd" MetadataType="Schema" ID="b892eccc-ef84-41ee-aa2b-9bb5c9074d0f" SourceId="1" SourceUrl="http://localhost:56660/DeviceService.svc?xsd=xsd4" />
     <MetadataFile FileName="DeviceService.disco" MetadataType="Disco" ID="c7745499-cb21-42d5-935b-7f5a505be87c" SourceId="1" SourceUrl="http://localhost:56660/DeviceService.svc?disco" />
     <MetadataFile FileName="DeviceService.wsdl" MetadataType="Wsdl" ID="4d6e2a90-8563-4a20-a0ff-5b4b9bc0fda4" SourceId="1" SourceUrl="http://localhost:56660/DeviceService.svc?wsdl" />
     <MetadataFile FileName="DeviceService.xsd" MetadataType="Schema" ID="e2ee7e8d-4338-4dc2-ba2d-7e18d2ec75f3" SourceId="1" SourceUrl="http://localhost:56660/DeviceService.svc?xsd=xsd1" />

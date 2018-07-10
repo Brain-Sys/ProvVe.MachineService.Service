@@ -38,7 +38,7 @@ namespace ProvVe.MachineService.ModernWindowsApp
             MessageBox.Show(today2.ToString());
 
             OpenPortRequest request2 = new OpenPortRequest();
-            request2.PortName = "COM1";
+            request2.PortName = Ports.COM4;
             request2.Protocol = "serial";
             OpenPortResponse response2 = await client.OpenPortAsync(request2);
 

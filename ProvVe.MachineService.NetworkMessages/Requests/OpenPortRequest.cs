@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProvVe.MachineService.NetworkMessages.Enumerations;
+using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
@@ -9,9 +10,9 @@ namespace ProvVe.MachineService.NetworkMessages.Requests
     public class OpenPortRequest
     {
         [DataMember(Name = "PortName", IsRequired = true)]
-        public string Name { get; set; }
+        public Ports Name { get; set; }
 
-        [DataMember]
+        [DataMember(Order = 999)]
         public string Protocol { get; set; }
     }
 }
