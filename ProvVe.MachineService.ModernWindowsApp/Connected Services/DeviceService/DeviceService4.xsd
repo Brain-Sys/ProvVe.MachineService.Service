@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Responses" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Responses" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
   <xs:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
   <xs:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Dto" />
   <xs:complexType name="OpenPortResponse">
     <xs:complexContent mixed="false">
@@ -15,10 +15,9 @@
   <xs:element name="OpenPortResponse" nillable="true" type="tns:OpenPortResponse" />
   <xs:complexType name="BaseResponse">
     <xs:sequence>
-      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="Exception" nillable="true" type="q1:Exception" />
       <xs:element minOccurs="0" name="ExceptionMessage" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Interval" type="ser:duration" />
-      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="ServerVersion" nillable="true" type="q2:Version" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="ServerVersion" nillable="true" type="q1:Version" />
       <xs:element minOccurs="0" name="Success" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
@@ -37,7 +36,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:BaseResponse">
         <xs:sequence>
-          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Dto" minOccurs="0" name="Items" nillable="true" type="q3:ArrayOfMachineDto" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Dto" minOccurs="0" name="Items" nillable="true" type="q2:ArrayOfMachineDto" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

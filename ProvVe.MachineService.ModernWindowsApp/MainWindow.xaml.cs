@@ -1,6 +1,7 @@
 ﻿using ProvVe.MachineService.ModernWindowsApp.DeviceService;
 using System.Windows;
 using System.Linq;
+using System.ServiceModel;
 
 namespace ProvVe.MachineService.ModernWindowsApp
 {
@@ -16,7 +17,7 @@ namespace ProvVe.MachineService.ModernWindowsApp
 
         private async void btnCallWcf_Click(object sender, RoutedEventArgs e)
         {
-            IDeviceService client = new DeviceServiceClient("NetTcpTest");
+            IDeviceService client = new DeviceServiceClient("BasicHttpBinding_IDeviceService");
 
             //ResetRequest request = new ResetRequest(6, "igord");
             //request.ApplicationName = "Modern WPF";
@@ -34,12 +35,17 @@ namespace ProvVe.MachineService.ModernWindowsApp
             OpenPortRequest request2 = new OpenPortRequest();
             request2.PortName = Ports.COM4;
             request2.Protocol = "serial";
-            request2.Filename = "C:\\Windows\\System32\\kernel32.dll";
-            OpenPortResponse response2 = await client.OpenPortAsync(request2);
+            request2.Filename = "C:\\Windows\\System32\\kernel64.dll";
 
-            if (response2.Success)
+            try
             {
-
+                OpenPortResponse response2 = await client.OpenPortAsync(request2);
+            }
+            catch (FaultException<ErrorDto> ex)
+            {
+                int s = ex.Detail.Severity;
+                string trace = ex.Detail.StackTrace;
+                MessageBox.Show(ex.ToString());
             }
 
             GetMachinesRequest request3 = new GetMachinesRequest();

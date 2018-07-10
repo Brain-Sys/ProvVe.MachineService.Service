@@ -248,9 +248,6 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Exception ExceptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ExceptionMessageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -269,19 +266,6 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
             }
             set {
                 this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Exception Exception {
-            get {
-                return this.ExceptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExceptionField, value) != true)) {
-                    this.ExceptionField = value;
-                    this.RaisePropertyChanged("Exception");
-                }
             }
         }
         
@@ -481,11 +465,91 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ErrorDto", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Dto" +
+        "")]
+    [System.SerializableAttribute()]
+    public partial class ErrorDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SeverityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StackTraceField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Severity {
+            get {
+                return this.SeverityField;
+            }
+            set {
+                if ((this.SeverityField.Equals(value) != true)) {
+                    this.SeverityField = value;
+                    this.RaisePropertyChanged("Severity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string StackTrace {
+            get {
+                return this.StackTraceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StackTraceField, value) != true)) {
+                    this.StackTraceField = value;
+                    this.RaisePropertyChanged("StackTrace");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="DeviceService.IDeviceService")]
     public interface IDeviceService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICommunication/OpenPort", ReplyAction="http://tempuri.org/ICommunication/OpenPortResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ProvVe.MachineService.ModernWindowsApp.DeviceService.ErrorDto), Action="http://tempuri.org/ICommunication/OpenPortErrorDtoFault", Name="ErrorDto", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Dto" +
+            "")]
         ProvVe.MachineService.ModernWindowsApp.DeviceService.OpenPortResponse OpenPort(ProvVe.MachineService.ModernWindowsApp.DeviceService.OpenPortRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICommunication/OpenPort", ReplyAction="http://tempuri.org/ICommunication/OpenPortResponse")]

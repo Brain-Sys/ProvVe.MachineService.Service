@@ -18,8 +18,8 @@ namespace ProvVe.MachineService.NetworkMessages.Responses
         [DataMember]
         public bool Success { get; set; }
 
-        [DataMember]
-        public Exception Exception { get; set; }
+        //[DataMember]
+        //public Exception Exception { get; set; }
 
         [DataMember]
         public string ExceptionMessage { get; set; }

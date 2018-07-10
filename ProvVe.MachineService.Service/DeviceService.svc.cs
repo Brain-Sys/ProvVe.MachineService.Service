@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -61,13 +62,22 @@ namespace ProvVe.MachineService.Service
             }
             catch (Exception ex)
             {
-                response.Exception = ex;
+                //response.Exception = ex;
                 response.ExceptionMessage = ex.Message;
                 response.Success = false;
-            }
 
-            cron.Stop();
-            response.Interval = cron.Elapsed;
+                var errDto = new ErrorDto();
+                errDto.Message = ex.Message;
+                errDto.Severity = 2;
+                errDto.StackTrace = ex.StackTrace;
+                throw new FaultException<ErrorDto>(errDto,
+                    new FaultReason(ex.Message));
+            }
+            finally
+            {
+                cron.Stop();
+                response.Interval = cron.Elapsed;
+            }
 
             return response;
         }
@@ -86,7 +96,7 @@ namespace ProvVe.MachineService.Service
             }
             catch (Exception ex)
             {
-                response.Exception = ex;
+                //response.Exception = ex;
                 response.ExceptionMessage = ex.Message;
                 response.Success = false;
             }

@@ -3,12 +3,12 @@
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Dto" />
       <xsd:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Requests" />
       <xsd:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
       <xsd:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Enumerations" />
       <xsd:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Responses" />
-      <xsd:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Dto" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IDeviceService_OpenPort_InputMessage">
@@ -16,6 +16,9 @@
   </wsdl:message>
   <wsdl:message name="IDeviceService_OpenPort_OutputMessage">
     <wsdl:part name="parameters" element="tns:OpenPortResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceService_OpenPort_ErrorDtoFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Dto" name="detail" element="q1:ErrorDto" />
   </wsdl:message>
   <wsdl:message name="IDeviceService_Ping_InputMessage">
     <wsdl:part name="parameters" element="tns:Ping" />
@@ -45,6 +48,7 @@
     <wsdl:operation name="OpenPort">
       <wsdl:input wsaw:Action="http://tempuri.org/ICommunication/OpenPort" message="tns:IDeviceService_OpenPort_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICommunication/OpenPortResponse" message="tns:IDeviceService_OpenPort_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICommunication/OpenPortErrorDtoFault" name="ErrorDtoFault" message="tns:IDeviceService_OpenPort_ErrorDtoFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="Ping">
       <wsdl:input wsaw:Action="http://tempuri.org/IDeviceService/Ping" message="tns:IDeviceService_Ping_InputMessage" />
@@ -73,6 +77,9 @@
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="ErrorDtoFault">
+        <soap:fault use="literal" name="ErrorDtoFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Ping">
       <soap:operation soapAction="http://tempuri.org/IDeviceService/Ping" style="document" />
