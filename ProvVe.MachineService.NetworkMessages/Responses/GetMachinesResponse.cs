@@ -11,6 +11,6 @@ namespace ProvVe.MachineService.NetworkMessages.Responses
     public class GetMachinesResponse : BaseResponse
     {
         [DataMember]
-        public List<MachineDto> Items { get; set; }
+        public IQueryable<MachineDto> Items { get; set; }
     }
 }

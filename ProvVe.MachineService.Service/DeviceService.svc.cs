@@ -88,6 +88,7 @@ namespace ProvVe.MachineService.Service
             cron.Start();
 
             var response = new GetMachinesResponse();
+            //response.Items.FirstOrDefault().Customers.FirstOrDefault().Machines.FirstOrDefault().Customers.FirstOrDefault
 
             try
             {
@@ -114,6 +115,16 @@ namespace ProvVe.MachineService.Service
             // Su DB
 
             return result.AsQueryable();
+        }
+
+        public Tuple<string, int, string, DateTime> Call(double request)
+        {
+            var response = new Tuple<string, int, string, DateTime>
+                ("a", 8, "b", DateTime.Now);
+
+            //var x = (name: "a", age: 8, surname: "b", today: DateTime.Now);
+
+            return response;
         }
     }
 }

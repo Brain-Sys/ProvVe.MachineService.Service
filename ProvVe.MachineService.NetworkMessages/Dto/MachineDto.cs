@@ -32,6 +32,9 @@ namespace ProvVe.MachineService.NetworkMessages.Dto
             }
         }
 
+        [DataMember]
+        public List<CustomerDto> Customers { get; set; }
+
         public MachineDto(Machine internalInstance)
         {
             this.internalInstance = internalInstance;

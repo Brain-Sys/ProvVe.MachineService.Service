@@ -116,6 +116,9 @@
     <None Include="Connected Services\DeviceService\DeviceService5.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\DeviceService\DeviceService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\DeviceService\ProvVe.MachineService.ModernWindowsApp.DeviceService.GetMachinesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

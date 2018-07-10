@@ -48,6 +48,11 @@ namespace ProvVe.MachineService.ModernWindowsApp
                 MessageBox.Show(ex.ToString());
             }
 
+            var tuple = await client.CallAsync(34);
+
+
+            var list2 = await client.GetMachinesAsync(new GetMachinesRequest());
+
             GetMachinesRequest request3 = new GetMachinesRequest();
             var response3 = await client.SearchMachinesAsync(request3);
             var list = response3

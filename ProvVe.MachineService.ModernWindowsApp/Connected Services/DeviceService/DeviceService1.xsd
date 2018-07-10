@@ -3,6 +3,7 @@
   <xs:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Requests" />
   <xs:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Responses" />
   <xs:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Dto" />
+  <xs:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
   <xs:element name="OpenPort">
     <xs:complexType>
       <xs:sequence>
@@ -68,6 +69,20 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Dto" minOccurs="0" name="SearchMachinesResult" nillable="true" type="q8:ArrayOfMachineDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Call">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CallResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CallResult" nillable="true" type="q9:TupleOfstringintstringdateTime" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

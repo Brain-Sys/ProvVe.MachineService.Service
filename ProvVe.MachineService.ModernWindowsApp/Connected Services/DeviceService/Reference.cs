@@ -360,13 +360,29 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
     [System.Runtime.Serialization.DataContractAttribute(Name="GetMachinesResponse", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Res" +
         "ponses")]
     [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.ModernWindowsApp.DeviceService.OpenPortResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.ModernWindowsApp.DeviceService.BaseResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.ModernWindowsApp.DeviceService.ResetResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.ModernWindowsApp.DeviceService.Ports))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.ModernWindowsApp.DeviceService.ErrorDto))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.ModernWindowsApp.DeviceService.MachineDto[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.ModernWindowsApp.DeviceService.MachineDto))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.ModernWindowsApp.DeviceService.CustomerDto[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.ModernWindowsApp.DeviceService.CustomerDto))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(string[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Version))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Tuple<string, int, string, System.DateTime>))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.ModernWindowsApp.DeviceService.OpenPortRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.ModernWindowsApp.DeviceService.BaseRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.ModernWindowsApp.DeviceService.ResetRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.ModernWindowsApp.DeviceService.GetMachinesRequest))]
     public partial class GetMachinesResponse : ProvVe.MachineService.ModernWindowsApp.DeviceService.BaseResponse {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ProvVe.MachineService.ModernWindowsApp.DeviceService.MachineDto[] ItemsField;
+        private object ItemsField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ProvVe.MachineService.ModernWindowsApp.DeviceService.MachineDto[] Items {
+        public object Items {
             get {
                 return this.ItemsField;
             }
@@ -399,68 +415,6 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
                     this.ContentField = value;
                     this.RaisePropertyChanged("Content");
                 }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MachineDto", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Dto" +
-        "")]
-    [System.SerializableAttribute()]
-    public partial class MachineDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WorkHoursField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Code {
-            get {
-                return this.CodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CodeField, value) != true)) {
-                    this.CodeField = value;
-                    this.RaisePropertyChanged("Code");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WorkHours {
-            get {
-                return this.WorkHoursField;
-            }
-            set {
-                if ((this.WorkHoursField.Equals(value) != true)) {
-                    this.WorkHoursField = value;
-                    this.RaisePropertyChanged("WorkHours");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -543,6 +497,146 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MachineDto", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Dto" +
+        "")]
+    [System.SerializableAttribute()]
+    public partial class MachineDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ProvVe.MachineService.ModernWindowsApp.DeviceService.CustomerDto[] CustomersField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int WorkHoursField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Code {
+            get {
+                return this.CodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodeField, value) != true)) {
+                    this.CodeField = value;
+                    this.RaisePropertyChanged("Code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ProvVe.MachineService.ModernWindowsApp.DeviceService.CustomerDto[] Customers {
+            get {
+                return this.CustomersField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomersField, value) != true)) {
+                    this.CustomersField = value;
+                    this.RaisePropertyChanged("Customers");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int WorkHours {
+            get {
+                return this.WorkHoursField;
+            }
+            set {
+                if ((this.WorkHoursField.Equals(value) != true)) {
+                    this.WorkHoursField = value;
+                    this.RaisePropertyChanged("WorkHours");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerDto", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Dto" +
+        "")]
+    [System.SerializableAttribute()]
+    public partial class CustomerDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string[] MachineCodesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string[] MachineCodes {
+            get {
+                return this.MachineCodesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MachineCodesField, value) != true)) {
+                    this.MachineCodesField = value;
+                    this.RaisePropertyChanged("MachineCodes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="DeviceService.IDeviceService")]
     public interface IDeviceService {
@@ -578,6 +672,12 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeviceService/SearchMachines", ReplyAction="http://tempuri.org/IDeviceService/SearchMachinesResponse")]
         System.Threading.Tasks.Task<ProvVe.MachineService.ModernWindowsApp.DeviceService.MachineDto[]> SearchMachinesAsync(ProvVe.MachineService.ModernWindowsApp.DeviceService.GetMachinesRequest input);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeviceService/Call", ReplyAction="http://tempuri.org/IDeviceService/CallResponse")]
+        System.Tuple<string, int, string, System.DateTime> Call(double request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeviceService/Call", ReplyAction="http://tempuri.org/IDeviceService/CallResponse")]
+        System.Threading.Tasks.Task<System.Tuple<string, int, string, System.DateTime>> CallAsync(double request);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -645,6 +745,14 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
         
         public System.Threading.Tasks.Task<ProvVe.MachineService.ModernWindowsApp.DeviceService.MachineDto[]> SearchMachinesAsync(ProvVe.MachineService.ModernWindowsApp.DeviceService.GetMachinesRequest input) {
             return base.Channel.SearchMachinesAsync(input);
+        }
+        
+        public System.Tuple<string, int, string, System.DateTime> Call(double request) {
+            return base.Channel.Call(request);
+        }
+        
+        public System.Threading.Tasks.Task<System.Tuple<string, int, string, System.DateTime>> CallAsync(double request) {
+            return base.Channel.CallAsync(request);
         }
     }
 }

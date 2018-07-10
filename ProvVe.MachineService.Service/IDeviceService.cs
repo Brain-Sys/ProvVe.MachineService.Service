@@ -22,11 +22,11 @@ namespace ProvVe.MachineService.Service
         [OperationContract]
         GetMachinesResponse GetMachines(GetMachinesRequest input);
 
-
-
-
-
         [OperationContract]
         IQueryable<MachineDto> SearchMachines(GetMachinesRequest input);
+
+        [OperationContract]
+        // DLR == Dynamic Language Runtime
+        Tuple<string, int, string, DateTime> Call(double request);
     }
 }

@@ -9,6 +9,7 @@
       <xsd:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
       <xsd:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Enumerations" />
       <xsd:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Responses" />
+      <xsd:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IDeviceService_OpenPort_InputMessage">
@@ -44,6 +45,12 @@
   <wsdl:message name="IDeviceService_SearchMachines_OutputMessage">
     <wsdl:part name="parameters" element="tns:SearchMachinesResponse" />
   </wsdl:message>
+  <wsdl:message name="IDeviceService_Call_InputMessage">
+    <wsdl:part name="parameters" element="tns:Call" />
+  </wsdl:message>
+  <wsdl:message name="IDeviceService_Call_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CallResponse" />
+  </wsdl:message>
   <wsdl:portType name="IDeviceService">
     <wsdl:operation name="OpenPort">
       <wsdl:input wsaw:Action="http://tempuri.org/ICommunication/OpenPort" message="tns:IDeviceService_OpenPort_InputMessage" />
@@ -65,6 +72,10 @@
     <wsdl:operation name="SearchMachines">
       <wsdl:input wsaw:Action="http://tempuri.org/IDeviceService/SearchMachines" message="tns:IDeviceService_SearchMachines_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDeviceService/SearchMachinesResponse" message="tns:IDeviceService_SearchMachines_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Call">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDeviceService/Call" message="tns:IDeviceService_Call_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDeviceService/CallResponse" message="tns:IDeviceService_Call_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IDeviceService" type="tns:IDeviceService">
@@ -110,6 +121,15 @@
     </wsdl:operation>
     <wsdl:operation name="SearchMachines">
       <soap:operation soapAction="http://tempuri.org/IDeviceService/SearchMachines" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Call">
+      <soap:operation soapAction="http://tempuri.org/IDeviceService/Call" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
