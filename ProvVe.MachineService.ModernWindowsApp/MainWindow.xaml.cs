@@ -29,8 +29,7 @@ namespace ProvVe.MachineService.ModernWindowsApp
 
         private async void btnCallWcf_Click(object sender, RoutedEventArgs e)
         {
-            IDeviceService client = new DeviceServiceClient();
-
+            IDeviceService client = new DeviceServiceClient("NetTcpTest");
 
             //ResetRequest request = new ResetRequest(6, "igord");
             //request.ApplicationName = "Modern WPF";
