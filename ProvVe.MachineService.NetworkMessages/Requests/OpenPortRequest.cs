@@ -12,6 +12,9 @@ namespace ProvVe.MachineService.NetworkMessages.Requests
         [DataMember(Name = "PortName", IsRequired = true)]
         public Ports Name { get; set; }
 
+        [DataMember]
+        public string Filename { get; set; }
+
         [DataMember(Order = 999)]
         public string Protocol { get; set; }
     }

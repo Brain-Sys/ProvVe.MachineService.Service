@@ -156,10 +156,26 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
     [System.SerializableAttribute()]
     public partial class OpenPortRequest : ProvVe.MachineService.ModernWindowsApp.DeviceService.BaseRequest {
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilenameField;
+        
         private ProvVe.MachineService.ModernWindowsApp.DeviceService.Ports PortNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ProtocolField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Filename {
+            get {
+                return this.FilenameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilenameField, value) != true)) {
+                    this.FilenameField = value;
+                    this.RaisePropertyChanged("Filename");
+                }
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public ProvVe.MachineService.ModernWindowsApp.DeviceService.Ports PortName {
@@ -351,6 +367,22 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
         "ponses")]
     [System.SerializableAttribute()]
     public partial class OpenPortResponse : ProvVe.MachineService.ModernWindowsApp.DeviceService.BaseResponse {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] ContentField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] Content {
+            get {
+                return this.ContentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ContentField, value) != true)) {
+                    this.ContentField = value;
+                    this.RaisePropertyChanged("Content");
+                }
+            }
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

@@ -6,6 +6,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:BaseRequest">
         <xs:sequence>
+          <xs:element minOccurs="0" name="Filename" nillable="true" type="xs:string" />
           <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Enumerations" name="PortName" type="q1:Ports" />
           <xs:element minOccurs="0" name="Protocol" nillable="true" type="xs:string" />
         </xs:sequence>

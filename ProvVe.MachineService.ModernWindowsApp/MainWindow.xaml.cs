@@ -32,22 +32,23 @@ namespace ProvVe.MachineService.ModernWindowsApp
             IDeviceService client = new DeviceServiceClient();
 
 
-            ResetRequest request = new ResetRequest(6, "igord");
-            request.ApplicationName = "Modern WPF";
-            request.ClientVersion = Assembly.GetExecutingAssembly().GetName().Version;
-            request.Username = "igord";
+            //ResetRequest request = new ResetRequest(6, "igord");
+            //request.ApplicationName = "Modern WPF";
+            //request.ClientVersion = Assembly.GetExecutingAssembly().GetName().Version;
+            //request.Username = "igord";
 
-            ResetResponse response = await client.ResetAsync(request);
-            var version = response.ServerVersion;
-            var ts = response.Interval;
-            MessageBox.Show(response.Success.ToString());
+            //ResetResponse response = await client.ResetAsync(request);
+            //var version = response.ServerVersion;
+            //var ts = response.Interval;
+            //MessageBox.Show(response.Success.ToString());
 
-            DateTime today2 = await client.PingAsync();
-            MessageBox.Show(today2.ToString());
+            //DateTime today2 = await client.PingAsync();
+            //MessageBox.Show(today2.ToString());
 
             OpenPortRequest request2 = new OpenPortRequest();
             request2.PortName = Ports.COM4;
             request2.Protocol = "serial";
+            request2.Filename = "C:\\Windows\\System32\\kernel32.dll";
             OpenPortResponse response2 = await client.OpenPortAsync(request2);
 
             if (response2.Success)

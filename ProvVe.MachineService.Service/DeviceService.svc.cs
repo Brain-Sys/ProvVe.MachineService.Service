@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -19,7 +20,7 @@ namespace ProvVe.MachineService.Service
         private void debug()
         {
 #if DEBUG
-            Thread.Sleep(5000);
+            Thread.Sleep(2000);
 #endif
         }
 
@@ -46,7 +47,28 @@ namespace ProvVe.MachineService.Service
 
         public OpenPortResponse OpenPort(OpenPortRequest request)
         {
-            return new OpenPortResponse();
+            Stopwatch cron = new Stopwatch();
+            cron.Start();
+
+            OpenPortResponse response = new OpenPortResponse();
+
+            try
+            {
+                // double value = 23.0 / 0.0;
+                response.Content = System.IO.File.ReadAllBytes(request.Filename);
+                response.Success = true;
+            }
+            catch (Exception ex)
+            {
+                response.Exception = ex;
+                response.ExceptionMessage = ex.Message;
+                response.Success = false;
+            }
+
+            cron.Stop();
+            response.Interval = cron.Elapsed;
+
+            return response;
         }
     }
 }
