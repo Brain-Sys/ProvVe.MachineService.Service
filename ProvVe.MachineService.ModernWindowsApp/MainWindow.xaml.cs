@@ -28,7 +28,7 @@ namespace ProvVe.MachineService.ModernWindowsApp
 
         private async void btnCallWcf_Click(object sender, RoutedEventArgs e)
         {
-            DeviceService.DeviceServiceClient client = new DeviceService.DeviceServiceClient();
+            IDeviceService client = new DeviceServiceClient();
 
             ResetRequest request = new ResetRequest(6, "igord");
             ResetResponse response = await client.ResetAsync(request);
@@ -36,6 +36,12 @@ namespace ProvVe.MachineService.ModernWindowsApp
 
             DateTime today2 = await client.PingAsync();
             MessageBox.Show(today2.ToString());
+
+            OpenPortRequest request2 = new OpenPortRequest();
+            request2.PortName = "COM1";
+            request2.Protocol = "serial";
+            OpenPortResponse response2 = await client.OpenPortAsync(request2);
+
         }
     }
 }

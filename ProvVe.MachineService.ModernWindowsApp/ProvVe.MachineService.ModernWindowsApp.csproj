@@ -107,6 +107,9 @@
     <None Include="Connected Services\DeviceService\DeviceService21.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\DeviceService\ProvVe.MachineService.ModernWindowsApp.DeviceService.OpenPortResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\DeviceService\ProvVe.MachineService.ModernWindowsApp.DeviceService.ResetResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

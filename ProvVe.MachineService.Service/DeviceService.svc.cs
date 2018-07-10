@@ -6,12 +6,15 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 using System.Threading;
+using ProvVe.MachineService.Interfaces;
 using ProvVe.MachineService.NetworkMessages.Requests;
 using ProvVe.MachineService.NetworkMessages.Responses;
 
 namespace ProvVe.MachineService.Service
 {
-    public class DeviceService : IDeviceService
+    public class DeviceService :
+        IDeviceService,
+        IDisposable
     {
         private void debug()
         {
@@ -34,6 +37,16 @@ namespace ProvVe.MachineService.Service
             response.Success = true;
 
             return response;
+        }
+
+        public void Dispose()
+        {
+            // Cleanup della memoria / risorse / stream
+        }
+
+        public OpenPortResponse OpenPort(OpenPortRequest request)
+        {
+            return new OpenPortResponse();
         }
     }
 }

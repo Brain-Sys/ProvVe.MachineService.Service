@@ -2,6 +2,20 @@
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Requests" />
   <xs:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Responses" />
+  <xs:element name="OpenPort">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Requests" minOccurs="0" name="request" nillable="true" type="q1:OpenPortRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OpenPortResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Responses" minOccurs="0" name="OpenPortResult" nillable="true" type="q2:OpenPortResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Ping">
     <xs:complexType>
       <xs:sequence />
@@ -17,14 +31,14 @@
   <xs:element name="Reset">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Requests" minOccurs="0" name="input" nillable="true" type="q1:ResetRequest" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Requests" minOccurs="0" name="input" nillable="true" type="q3:ResetRequest" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ResetResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Responses" minOccurs="0" name="ResetResult" nillable="true" type="q2:ResetResponse" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Responses" minOccurs="0" name="ResetResult" nillable="true" type="q4:ResetResponse" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

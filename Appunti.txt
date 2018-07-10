@@ -21,10 +21,13 @@ WCF Binding
 	A		address			http:// tcp:// msmq://
 	B		behavior(s)		comportamento(i)
 	C		contract		IQualcosa (interfaccia C#)
-.NET Framework / (PCL) --> .NET Standard
+.NET Framework / (Portable Class Library) --> .NET Standard
 Evoluzione di WCF è Web Api
 Database (SQL Express, SQLite)
-
+SignalR (asp.net mvc, core)
+	Messaggi real-time broadcast tra client & server
+	E' "hostabile" in WCF
+	JSON
 
 NomeCliente.NomeProgetto.NomeLayer
 Microsoft.Maps.Qualcosa
@@ -39,6 +42,7 @@ ProvVe.MachineService.Repository
 ProvVe.MachineService.Requests
 ProvVe.MachineService.Responses
 ProvVe.MachineService.NetworkMessages
+ProvVe.MachineService.BusinessLayer
 ProvVe.MachineService.Dto
 
 Sorgenti su GitHub
@@ -46,7 +50,7 @@ https://github.com/Brain-Sys/ProvVe.MachineService.Service
 
 
 .NET Framework --> .NET Standard 2.0			OK
-450.000 tipi			90%
+45.000 tipi			90%
 
 
 

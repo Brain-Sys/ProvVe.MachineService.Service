@@ -1,4 +1,5 @@
-﻿using ProvVe.MachineService.NetworkMessages.Requests;
+﻿using ProvVe.MachineService.Interfaces;
+using ProvVe.MachineService.NetworkMessages.Requests;
 using ProvVe.MachineService.NetworkMessages.Responses;
 using System;
 using System.ServiceModel;
@@ -6,7 +7,7 @@ using System.ServiceModel;
 namespace ProvVe.MachineService.Service
 {
     [ServiceContract]
-    public interface IDeviceService
+    public interface IDeviceService : ICommunication
     {
         [OperationContract]
         DateTime Ping();

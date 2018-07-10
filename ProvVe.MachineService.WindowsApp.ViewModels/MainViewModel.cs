@@ -4,5 +4,9 @@ namespace ProvVe.MachineService.WindowsApp.ViewModels
 {
     public class MainViewModel
     {
+        public MainViewModel()
+        {
+
+        }
     }
 }

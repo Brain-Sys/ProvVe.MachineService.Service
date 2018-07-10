@@ -83,6 +83,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ProvVe.MachineService.Interfaces\ProvVe.MachineService.Interfaces.csproj">
+      <Project>{b52b48d6-c247-40ae-9742-8a5766b43cf2}</Project>
+      <Name>ProvVe.MachineService.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ProvVe.MachineService.NetworkMessages\ProvVe.MachineService.NetworkMessages.csproj">
       <Project>{7e2b1e9f-3c7c-4a63-89d8-65d134968481}</Project>
       <Name>ProvVe.MachineService.NetworkMessages</Name>

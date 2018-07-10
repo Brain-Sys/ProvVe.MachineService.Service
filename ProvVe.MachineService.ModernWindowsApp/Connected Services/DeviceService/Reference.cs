@@ -15,6 +15,97 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OpenPortRequest", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Req" +
+        "uests")]
+    [System.SerializableAttribute()]
+    public partial class OpenPortRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private string PortNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProtocolField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public string PortName {
+            get {
+                return this.PortNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PortNameField, value) != true)) {
+                    this.PortNameField = value;
+                    this.RaisePropertyChanged("PortName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Protocol {
+            get {
+                return this.ProtocolField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProtocolField, value) != true)) {
+                    this.ProtocolField = value;
+                    this.RaisePropertyChanged("Protocol");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OpenPortResponse", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Res" +
+        "ponses")]
+    [System.SerializableAttribute()]
+    public partial class OpenPortResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ResetRequest", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Req" +
         "uests")]
     [System.SerializableAttribute()]
@@ -126,7 +217,6 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
                 if ((this.ActualTimestampField.Equals(value) != true)) {
                     this.ActualTimestampField = value;
                     this.RaisePropertyChanged("ActualTimestamp");
-                    this.RaisePropertyChanged("IsResetRecent");
                 }
             }
         }
@@ -157,6 +247,12 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="DeviceService.IDeviceService")]
     public interface IDeviceService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICommunication/OpenPort", ReplyAction="http://tempuri.org/ICommunication/OpenPortResponse")]
+        ProvVe.MachineService.ModernWindowsApp.DeviceService.OpenPortResponse OpenPort(ProvVe.MachineService.ModernWindowsApp.DeviceService.OpenPortRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICommunication/OpenPort", ReplyAction="http://tempuri.org/ICommunication/OpenPortResponse")]
+        System.Threading.Tasks.Task<ProvVe.MachineService.ModernWindowsApp.DeviceService.OpenPortResponse> OpenPortAsync(ProvVe.MachineService.ModernWindowsApp.DeviceService.OpenPortRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeviceService/Ping", ReplyAction="http://tempuri.org/IDeviceService/PingResponse")]
         System.DateTime Ping();
@@ -196,6 +292,14 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
         
         public DeviceServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public ProvVe.MachineService.ModernWindowsApp.DeviceService.OpenPortResponse OpenPort(ProvVe.MachineService.ModernWindowsApp.DeviceService.OpenPortRequest request) {
+            return base.Channel.OpenPort(request);
+        }
+        
+        public System.Threading.Tasks.Task<ProvVe.MachineService.ModernWindowsApp.DeviceService.OpenPortResponse> OpenPortAsync(ProvVe.MachineService.ModernWindowsApp.DeviceService.OpenPortRequest request) {
+            return base.Channel.OpenPortAsync(request);
         }
         
         public System.DateTime Ping() {

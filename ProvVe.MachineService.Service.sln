@@ -24,7 +24,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvVe.MachineService.Moder
 		{5659E8C4-D9FD-483B-AB1C-589A820DD2D5} = {5659E8C4-D9FD-483B-AB1C-589A820DD2D5}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvVe.MachineService.NetworkMessages", "ProvVe.MachineService.NetworkMessages\ProvVe.MachineService.NetworkMessages.csproj", "{7E2B1E9F-3C7C-4A63-89D8-65D134968481}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProvVe.MachineService.NetworkMessages", "ProvVe.MachineService.NetworkMessages\ProvVe.MachineService.NetworkMessages.csproj", "{7E2B1E9F-3C7C-4A63-89D8-65D134968481}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Servers", "Servers", "{0776707B-70B2-4976-AFF1-A05AE8D48079}"
 EndProject
@@ -36,6 +36,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvVe.MachineService.WindowsServiceHost", "ProvVe.MachineService.WindowsServiceHost\ProvVe.MachineService.WindowsServiceHost.csproj", "{7D5EC1B9-7DDF-492D-B26A-EFB7C49DF060}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvVe.MachineService.ConsoleHost", "ProvVe.MachineService.ConsoleHost\ProvVe.MachineService.ConsoleHost.csproj", "{14CCB187-4F02-471D-A45D-84BCBAB279E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvVe.MachineService.BusinessLayer", "ProvVe.MachineService.BusinessLayer\ProvVe.MachineService.BusinessLayer.csproj", "{D8C4B519-B115-4A80-BEEA-79CF1C670580}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvVe.MachineService.Interfaces", "ProvVe.MachineService.Interfaces\ProvVe.MachineService.Interfaces.csproj", "{B52B48D6-C247-40AE-9742-8A5766B43CF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +79,14 @@ Global
 		{14CCB187-4F02-471D-A45D-84BCBAB279E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14CCB187-4F02-471D-A45D-84BCBAB279E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14CCB187-4F02-471D-A45D-84BCBAB279E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8C4B519-B115-4A80-BEEA-79CF1C670580}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8C4B519-B115-4A80-BEEA-79CF1C670580}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8C4B519-B115-4A80-BEEA-79CF1C670580}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8C4B519-B115-4A80-BEEA-79CF1C670580}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B52B48D6-C247-40AE-9742-8A5766B43CF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B52B48D6-C247-40AE-9742-8A5766B43CF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B52B48D6-C247-40AE-9742-8A5766B43CF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B52B48D6-C247-40AE-9742-8A5766B43CF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
