@@ -27,11 +27,34 @@ namespace ProvVe.MachineService.ConsoleHost
                 new NetTcpBinding(),
                 "net.tcp://TRAPPIST/DeviceService.svc");
 
+            //var user = new ServiceAuthenticationManager();
+            //host.Authentication.ServiceAuthenticationManager = user;
+            host.Opened += Host_Opened;
+            host.Closed += (s, e) => { };
+            host.UnknownMessageReceived += Host_UnknownMessageReceived;
+
+            foreach (var item in host.Description.Endpoints)
+            {
+                
+            }
+
             host.Open();
             Console.WriteLine("WCF started...");
             Console.ReadLine();
             host.Close();
             host = null;
+        }
+
+        private static void Host_UnknownMessageReceived(object sender,
+            UnknownMessageReceivedEventArgs e)
+        {
+            Message msg = e.Message;
+            MessageHeaders headers = msg.Headers;
+        }
+
+        private static void Host_Opened(object sender, EventArgs e)
+        {
+            Console.WriteLine("Un nuovo client si è connesso...");
         }
     }
 }

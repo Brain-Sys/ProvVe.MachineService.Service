@@ -34,4 +34,12 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="ResetRequest" nillable="true" type="tns:ResetRequest" />
+  <xs:complexType name="GetMachinesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetMachinesRequest" nillable="true" type="tns:GetMachinesRequest" />
 </xs:schema>

@@ -19,6 +19,7 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
         "uests")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.ModernWindowsApp.DeviceService.ResetRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.ModernWindowsApp.DeviceService.GetMachinesRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.ModernWindowsApp.DeviceService.OpenPortRequest))]
     public partial class BaseRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -151,6 +152,14 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GetMachinesRequest", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Req" +
+        "uests")]
+    [System.SerializableAttribute()]
+    public partial class GetMachinesRequest : ProvVe.MachineService.ModernWindowsApp.DeviceService.BaseRequest {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="OpenPortRequest", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Req" +
         "uests")]
     [System.SerializableAttribute()]
@@ -231,6 +240,7 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
         "ponses")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.ModernWindowsApp.DeviceService.ResetResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.ModernWindowsApp.DeviceService.GetMachinesResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.ModernWindowsApp.DeviceService.OpenPortResponse))]
     public partial class BaseResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -363,6 +373,30 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GetMachinesResponse", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Res" +
+        "ponses")]
+    [System.SerializableAttribute()]
+    public partial class GetMachinesResponse : ProvVe.MachineService.ModernWindowsApp.DeviceService.BaseResponse {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ProvVe.MachineService.ModernWindowsApp.DeviceService.MachineDto[] ItemsField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ProvVe.MachineService.ModernWindowsApp.DeviceService.MachineDto[] Items {
+            get {
+                return this.ItemsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ItemsField, value) != true)) {
+                    this.ItemsField = value;
+                    this.RaisePropertyChanged("Items");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="OpenPortResponse", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Res" +
         "ponses")]
     [System.SerializableAttribute()]
@@ -381,6 +415,68 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
                     this.ContentField = value;
                     this.RaisePropertyChanged("Content");
                 }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MachineDto", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Dto" +
+        "")]
+    [System.SerializableAttribute()]
+    public partial class MachineDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int WorkHoursField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Code {
+            get {
+                return this.CodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodeField, value) != true)) {
+                    this.CodeField = value;
+                    this.RaisePropertyChanged("Code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int WorkHours {
+            get {
+                return this.WorkHoursField;
+            }
+            set {
+                if ((this.WorkHoursField.Equals(value) != true)) {
+                    this.WorkHoursField = value;
+                    this.RaisePropertyChanged("WorkHours");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -406,6 +502,18 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeviceService/Reset", ReplyAction="http://tempuri.org/IDeviceService/ResetResponse")]
         System.Threading.Tasks.Task<ProvVe.MachineService.ModernWindowsApp.DeviceService.ResetResponse> ResetAsync(ProvVe.MachineService.ModernWindowsApp.DeviceService.ResetRequest input);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeviceService/GetMachines", ReplyAction="http://tempuri.org/IDeviceService/GetMachinesResponse")]
+        ProvVe.MachineService.ModernWindowsApp.DeviceService.GetMachinesResponse GetMachines(ProvVe.MachineService.ModernWindowsApp.DeviceService.GetMachinesRequest input);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeviceService/GetMachines", ReplyAction="http://tempuri.org/IDeviceService/GetMachinesResponse")]
+        System.Threading.Tasks.Task<ProvVe.MachineService.ModernWindowsApp.DeviceService.GetMachinesResponse> GetMachinesAsync(ProvVe.MachineService.ModernWindowsApp.DeviceService.GetMachinesRequest input);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeviceService/SearchMachines", ReplyAction="http://tempuri.org/IDeviceService/SearchMachinesResponse")]
+        ProvVe.MachineService.ModernWindowsApp.DeviceService.MachineDto[] SearchMachines(ProvVe.MachineService.ModernWindowsApp.DeviceService.GetMachinesRequest input);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeviceService/SearchMachines", ReplyAction="http://tempuri.org/IDeviceService/SearchMachinesResponse")]
+        System.Threading.Tasks.Task<ProvVe.MachineService.ModernWindowsApp.DeviceService.MachineDto[]> SearchMachinesAsync(ProvVe.MachineService.ModernWindowsApp.DeviceService.GetMachinesRequest input);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -457,6 +565,22 @@ namespace ProvVe.MachineService.ModernWindowsApp.DeviceService {
         
         public System.Threading.Tasks.Task<ProvVe.MachineService.ModernWindowsApp.DeviceService.ResetResponse> ResetAsync(ProvVe.MachineService.ModernWindowsApp.DeviceService.ResetRequest input) {
             return base.Channel.ResetAsync(input);
+        }
+        
+        public ProvVe.MachineService.ModernWindowsApp.DeviceService.GetMachinesResponse GetMachines(ProvVe.MachineService.ModernWindowsApp.DeviceService.GetMachinesRequest input) {
+            return base.Channel.GetMachines(input);
+        }
+        
+        public System.Threading.Tasks.Task<ProvVe.MachineService.ModernWindowsApp.DeviceService.GetMachinesResponse> GetMachinesAsync(ProvVe.MachineService.ModernWindowsApp.DeviceService.GetMachinesRequest input) {
+            return base.Channel.GetMachinesAsync(input);
+        }
+        
+        public ProvVe.MachineService.ModernWindowsApp.DeviceService.MachineDto[] SearchMachines(ProvVe.MachineService.ModernWindowsApp.DeviceService.GetMachinesRequest input) {
+            return base.Channel.SearchMachines(input);
+        }
+        
+        public System.Threading.Tasks.Task<ProvVe.MachineService.ModernWindowsApp.DeviceService.MachineDto[]> SearchMachinesAsync(ProvVe.MachineService.ModernWindowsApp.DeviceService.GetMachinesRequest input) {
+            return base.Channel.SearchMachinesAsync(input);
         }
     }
 }

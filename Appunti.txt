@@ -43,6 +43,7 @@ ProvVe.MachineService.Requests
 ProvVe.MachineService.Responses
 ProvVe.MachineService.NetworkMessages
 ProvVe.MachineService.BusinessLayer
+ProvVe.MachineService.DomainModel
 ProvVe.MachineService.Dto
 
 Sorgenti su GitHub

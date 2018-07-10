@@ -2,6 +2,7 @@
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Requests" />
   <xs:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Responses" />
+  <xs:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Dto" />
   <xs:element name="OpenPort">
     <xs:complexType>
       <xs:sequence>
@@ -39,6 +40,34 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Responses" minOccurs="0" name="ResetResult" nillable="true" type="q4:ResetResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMachines">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Requests" minOccurs="0" name="input" nillable="true" type="q5:GetMachinesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMachinesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Responses" minOccurs="0" name="GetMachinesResult" nillable="true" type="q6:GetMachinesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchMachines">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Requests" minOccurs="0" name="input" nillable="true" type="q7:GetMachinesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchMachinesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Dto" minOccurs="0" name="SearchMachinesResult" nillable="true" type="q8:ArrayOfMachineDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

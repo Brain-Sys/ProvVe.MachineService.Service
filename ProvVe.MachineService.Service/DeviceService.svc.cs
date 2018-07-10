@@ -8,6 +8,7 @@ using System.ServiceModel.Web;
 using System.Text;
 using System.Threading;
 using ProvVe.MachineService.Interfaces;
+using ProvVe.MachineService.NetworkMessages.Dto;
 using ProvVe.MachineService.NetworkMessages.Requests;
 using ProvVe.MachineService.NetworkMessages.Responses;
 
@@ -69,6 +70,40 @@ namespace ProvVe.MachineService.Service
             response.Interval = cron.Elapsed;
 
             return response;
+        }
+
+        public GetMachinesResponse GetMachines(GetMachinesRequest input)
+        {
+            Stopwatch cron = new Stopwatch();
+            cron.Start();
+
+            var response = new GetMachinesResponse();
+
+            try
+            {
+                // double value = 23.0 / 0.0;
+                response.Success = true;
+            }
+            catch (Exception ex)
+            {
+                response.Exception = ex;
+                response.ExceptionMessage = ex.Message;
+                response.Success = false;
+            }
+
+            cron.Stop();
+            response.Interval = cron.Elapsed;
+
+            return response;
+        }
+
+        public IQueryable<MachineDto> SearchMachines(GetMachinesRequest input)
+        {
+            List<MachineDto> result = new List<MachineDto>();
+
+            // Su DB
+
+            return result.AsQueryable();
         }
     }
 }

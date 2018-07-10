@@ -2,6 +2,7 @@
 <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Responses" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Responses" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
   <xs:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:56660/DeviceService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Dto" />
   <xs:complexType name="OpenPortResponse">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:BaseResponse">
@@ -32,4 +33,14 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="ResetResponse" nillable="true" type="tns:ResetResponse" />
+  <xs:complexType name="GetMachinesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Dto" minOccurs="0" name="Items" nillable="true" type="q3:ArrayOfMachineDto" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetMachinesResponse" nillable="true" type="tns:GetMachinesResponse" />
 </xs:schema>
