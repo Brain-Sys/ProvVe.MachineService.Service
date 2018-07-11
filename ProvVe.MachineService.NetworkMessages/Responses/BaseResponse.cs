@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Runtime.Serialization;
 using System.Text;
 
@@ -23,5 +24,11 @@ namespace ProvVe.MachineService.NetworkMessages.Responses
 
         [DataMember]
         public string ExceptionMessage { get; set; }
+
+        [OnDeserialized]
+        private void DopoLaDeserializzazione(StreamingContext context)
+        {
+            Debug.WriteLine("DopoLaDeserializzazione");
+        }
     }
 }

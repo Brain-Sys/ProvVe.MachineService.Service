@@ -61,5 +61,12 @@ namespace ProvVe.MachineService.ModernWindowsApp
             //    .Take(3)
             //    .ToList();
         }
+
+        private async void btnReset_Click(object sender, RoutedEventArgs e)
+        {
+            GetMachinesRequest request = new GetMachinesRequest();
+            var response = await client.GetMachinesAsync(request);
+            MessageBox.Show(response.Success.ToString());
+        }
     }
 }

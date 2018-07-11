@@ -75,6 +75,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Partials\GetMachinesRequest.cs" />
+    <Compile Include="Partials\GetMachinesResponse.cs" />
     <Compile Include="Partials\ResetRequest.cs" />
     <Compile Include="Partials\ResetResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

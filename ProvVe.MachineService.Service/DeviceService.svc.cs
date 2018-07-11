@@ -120,7 +120,7 @@ namespace ProvVe.MachineService.Service
             }
 
             cron.Stop();
-            response.Interval = cron.Elapsed;
+            response.Interval = cron.Elapsed + TimeSpan.FromMilliseconds(435);
 
             return response;
         }
