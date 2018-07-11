@@ -3,6 +3,9 @@ using System.Windows;
 using System.Linq;
 using System.ServiceModel;
 using System;
+using System.Runtime.Serialization;
+using System.IO;
+using System.Runtime.Serialization.Json;
 
 namespace ProvVe.MachineService.ModernWindowsApp
 {
@@ -65,6 +68,12 @@ namespace ProvVe.MachineService.ModernWindowsApp
         private async void btnReset_Click(object sender, RoutedEventArgs e)
         {
             GetMachinesRequest request = new GetMachinesRequest();
+            DataContractSerializer engine1 = new DataContractSerializer(request.GetType());
+            engine1.WriteObject(new FileStream("E:\\Request.xml", FileMode.Create), request);
+
+            DataContractJsonSerializer engine2 = new DataContractJsonSerializer(request.GetType());
+            engine2.WriteObject(new FileStream("E:\\Request.json", FileMode.Create), request);
+            
             var response = await client.GetMachinesAsync(request);
             MessageBox.Show(response.Success.ToString());
         }
