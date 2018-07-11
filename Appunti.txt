@@ -44,6 +44,7 @@ ProvVe.MachineService.Responses
 ProvVe.MachineService.NetworkMessages
 ProvVe.MachineService.BusinessLayer
 ProvVe.MachineService.DomainModel
+ProvVe.MachineService.UnitTesting
 ProvVe.MachineService.Dto
 
 Sorgenti su GitHub
