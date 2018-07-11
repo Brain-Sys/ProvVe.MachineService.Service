@@ -30,7 +30,7 @@ namespace ProvVe.MachineService.WindowsApp
         {
             int id1 = Thread.CurrentThread.ManagedThreadId;
 
-            DeviceServiceClient client = new DeviceServiceClient();
+            DeviceServiceClient client = new DeviceServiceClient("BasicHttpBinding_IDeviceService");
             client.PingCompleted += (s2, e2) => {
                 int id2 = Thread.CurrentThread.ManagedThreadId;
 

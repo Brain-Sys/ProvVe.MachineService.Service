@@ -9,11 +9,647 @@
 //------------------------------------------------------------------------------
 
 namespace ProvVe.MachineService.WindowsApp.DeviceService {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequest", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Req" +
+        "uests")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.WindowsApp.DeviceService.ResetRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.WindowsApp.DeviceService.GetMachinesRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.WindowsApp.DeviceService.OpenPortRequest))]
+    public partial class BaseRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ApplicationNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Version ClientVersionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsernameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ApplicationName {
+            get {
+                return this.ApplicationNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ApplicationNameField, value) != true)) {
+                    this.ApplicationNameField = value;
+                    this.RaisePropertyChanged("ApplicationName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Version ClientVersion {
+            get {
+                return this.ClientVersionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ClientVersionField, value) != true)) {
+                    this.ClientVersionField = value;
+                    this.RaisePropertyChanged("ClientVersion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Username {
+            get {
+                return this.UsernameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsernameField, value) != true)) {
+                    this.UsernameField = value;
+                    this.RaisePropertyChanged("Username");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ResetRequest", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Req" +
+        "uests")]
+    [System.SerializableAttribute()]
+    public partial class ResetRequest : ProvVe.MachineService.WindowsApp.DeviceService.BaseRequest {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int MachineIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte MaxRetryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UserIdField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int MachineId {
+            get {
+                return this.MachineIdField;
+            }
+            set {
+                if ((this.MachineIdField.Equals(value) != true)) {
+                    this.MachineIdField = value;
+                    this.RaisePropertyChanged("MachineId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte MaxRetry {
+            get {
+                return this.MaxRetryField;
+            }
+            set {
+                if ((this.MaxRetryField.Equals(value) != true)) {
+                    this.MaxRetryField = value;
+                    this.RaisePropertyChanged("MaxRetry");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UserId {
+            get {
+                return this.UserIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserIdField, value) != true)) {
+                    this.UserIdField = value;
+                    this.RaisePropertyChanged("UserId");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GetMachinesRequest", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Req" +
+        "uests")]
+    [System.SerializableAttribute()]
+    public partial class GetMachinesRequest : ProvVe.MachineService.WindowsApp.DeviceService.BaseRequest {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OpenPortRequest", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Req" +
+        "uests")]
+    [System.SerializableAttribute()]
+    public partial class OpenPortRequest : ProvVe.MachineService.WindowsApp.DeviceService.BaseRequest {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FilenameField;
+        
+        private ProvVe.MachineService.WindowsApp.DeviceService.Ports PortNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProtocolField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Filename {
+            get {
+                return this.FilenameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilenameField, value) != true)) {
+                    this.FilenameField = value;
+                    this.RaisePropertyChanged("Filename");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public ProvVe.MachineService.WindowsApp.DeviceService.Ports PortName {
+            get {
+                return this.PortNameField;
+            }
+            set {
+                if ((this.PortNameField.Equals(value) != true)) {
+                    this.PortNameField = value;
+                    this.RaisePropertyChanged("PortName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Protocol {
+            get {
+                return this.ProtocolField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProtocolField, value) != true)) {
+                    this.ProtocolField = value;
+                    this.RaisePropertyChanged("Protocol");
+                }
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Ports", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Enu" +
+        "merations")]
+    public enum Ports : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        COM1 = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        COM2 = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        COM3 = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        COM4 = 9,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        localhost = 5,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponse", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Res" +
+        "ponses")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.WindowsApp.DeviceService.ResetResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.WindowsApp.DeviceService.GetMachinesResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.WindowsApp.DeviceService.OpenPortResponse))]
+    public partial class BaseResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ExceptionMessageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.TimeSpan IntervalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Version ServerVersionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool SuccessField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ExceptionMessage {
+            get {
+                return this.ExceptionMessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExceptionMessageField, value) != true)) {
+                    this.ExceptionMessageField = value;
+                    this.RaisePropertyChanged("ExceptionMessage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.TimeSpan Interval {
+            get {
+                return this.IntervalField;
+            }
+            set {
+                if ((this.IntervalField.Equals(value) != true)) {
+                    this.IntervalField = value;
+                    this.RaisePropertyChanged("Interval");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Version ServerVersion {
+            get {
+                return this.ServerVersionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ServerVersionField, value) != true)) {
+                    this.ServerVersionField = value;
+                    this.RaisePropertyChanged("ServerVersion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Success {
+            get {
+                return this.SuccessField;
+            }
+            set {
+                if ((this.SuccessField.Equals(value) != true)) {
+                    this.SuccessField = value;
+                    this.RaisePropertyChanged("Success");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ResetResponse", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Res" +
+        "ponses")]
+    [System.SerializableAttribute()]
+    public partial class ResetResponse : ProvVe.MachineService.WindowsApp.DeviceService.BaseResponse {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ActualTimestampField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ActualTimestamp {
+            get {
+                return this.ActualTimestampField;
+            }
+            set {
+                if ((this.ActualTimestampField.Equals(value) != true)) {
+                    this.ActualTimestampField = value;
+                    this.RaisePropertyChanged("ActualTimestamp");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GetMachinesResponse", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Res" +
+        "ponses")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.WindowsApp.DeviceService.Ports))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.WindowsApp.DeviceService.OpenPortResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.WindowsApp.DeviceService.BaseResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.WindowsApp.DeviceService.ResetResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.WindowsApp.DeviceService.ErrorDto))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.WindowsApp.DeviceService.MachineDto[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.WindowsApp.DeviceService.MachineDto))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.WindowsApp.DeviceService.CustomerDto[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.WindowsApp.DeviceService.CustomerDto))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(string[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.WindowsApp.DeviceService.OpenPortRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.WindowsApp.DeviceService.BaseRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.WindowsApp.DeviceService.ResetRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProvVe.MachineService.WindowsApp.DeviceService.GetMachinesRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Version))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(System.Tuple<string, int, string, System.DateTime>))]
+    public partial class GetMachinesResponse : ProvVe.MachineService.WindowsApp.DeviceService.BaseResponse {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private object ItemsField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public object Items {
+            get {
+                return this.ItemsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ItemsField, value) != true)) {
+                    this.ItemsField = value;
+                    this.RaisePropertyChanged("Items");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OpenPortResponse", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Res" +
+        "ponses")]
+    [System.SerializableAttribute()]
+    public partial class OpenPortResponse : ProvVe.MachineService.WindowsApp.DeviceService.BaseResponse {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] ContentField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] Content {
+            get {
+                return this.ContentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ContentField, value) != true)) {
+                    this.ContentField = value;
+                    this.RaisePropertyChanged("Content");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ErrorDto", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Dto" +
+        "")]
+    [System.SerializableAttribute()]
+    public partial class ErrorDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SeverityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StackTraceField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Severity {
+            get {
+                return this.SeverityField;
+            }
+            set {
+                if ((this.SeverityField.Equals(value) != true)) {
+                    this.SeverityField = value;
+                    this.RaisePropertyChanged("Severity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string StackTrace {
+            get {
+                return this.StackTraceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StackTraceField, value) != true)) {
+                    this.StackTraceField = value;
+                    this.RaisePropertyChanged("StackTrace");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MachineDto", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Dto" +
+        "")]
+    [System.SerializableAttribute()]
+    public partial class MachineDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ProvVe.MachineService.WindowsApp.DeviceService.CustomerDto[] CustomersField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int WorkHoursField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Code {
+            get {
+                return this.CodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodeField, value) != true)) {
+                    this.CodeField = value;
+                    this.RaisePropertyChanged("Code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ProvVe.MachineService.WindowsApp.DeviceService.CustomerDto[] Customers {
+            get {
+                return this.CustomersField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomersField, value) != true)) {
+                    this.CustomersField = value;
+                    this.RaisePropertyChanged("Customers");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int WorkHours {
+            get {
+                return this.WorkHoursField;
+            }
+            set {
+                if ((this.WorkHoursField.Equals(value) != true)) {
+                    this.WorkHoursField = value;
+                    this.RaisePropertyChanged("WorkHours");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerDto", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Dto" +
+        "")]
+    [System.SerializableAttribute()]
+    public partial class CustomerDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string[] MachineCodesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string[] MachineCodes {
+            get {
+                return this.MachineCodesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MachineCodesField, value) != true)) {
+                    this.MachineCodesField = value;
+                    this.RaisePropertyChanged("MachineCodes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="DeviceService.IDeviceService")]
     public interface IDeviceService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICommunication/OpenPort", ReplyAction="http://tempuri.org/ICommunication/OpenPortResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ProvVe.MachineService.WindowsApp.DeviceService.ErrorDto), Action="http://tempuri.org/ICommunication/OpenPortErrorDtoFault", Name="ErrorDto", Namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Dto" +
+            "")]
+        ProvVe.MachineService.WindowsApp.DeviceService.OpenPortResponse OpenPort(ProvVe.MachineService.WindowsApp.DeviceService.OpenPortRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ICommunication/OpenPort", ReplyAction="http://tempuri.org/ICommunication/OpenPortResponse")]
+        System.IAsyncResult BeginOpenPort(ProvVe.MachineService.WindowsApp.DeviceService.OpenPortRequest request, System.AsyncCallback callback, object asyncState);
+        
+        ProvVe.MachineService.WindowsApp.DeviceService.OpenPortResponse EndOpenPort(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeviceService/Ping", ReplyAction="http://tempuri.org/IDeviceService/PingResponse")]
         System.DateTime Ping();
@@ -22,10 +658,61 @@ namespace ProvVe.MachineService.WindowsApp.DeviceService {
         System.IAsyncResult BeginPing(System.AsyncCallback callback, object asyncState);
         
         System.DateTime EndPing(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeviceService/Reset", ReplyAction="http://tempuri.org/IDeviceService/ResetResponse")]
+        ProvVe.MachineService.WindowsApp.DeviceService.ResetResponse Reset(ProvVe.MachineService.WindowsApp.DeviceService.ResetRequest input);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IDeviceService/Reset", ReplyAction="http://tempuri.org/IDeviceService/ResetResponse")]
+        System.IAsyncResult BeginReset(ProvVe.MachineService.WindowsApp.DeviceService.ResetRequest input, System.AsyncCallback callback, object asyncState);
+        
+        ProvVe.MachineService.WindowsApp.DeviceService.ResetResponse EndReset(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeviceService/GetMachines", ReplyAction="http://tempuri.org/IDeviceService/GetMachinesResponse")]
+        ProvVe.MachineService.WindowsApp.DeviceService.GetMachinesResponse GetMachines(ProvVe.MachineService.WindowsApp.DeviceService.GetMachinesRequest input);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IDeviceService/GetMachines", ReplyAction="http://tempuri.org/IDeviceService/GetMachinesResponse")]
+        System.IAsyncResult BeginGetMachines(ProvVe.MachineService.WindowsApp.DeviceService.GetMachinesRequest input, System.AsyncCallback callback, object asyncState);
+        
+        ProvVe.MachineService.WindowsApp.DeviceService.GetMachinesResponse EndGetMachines(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeviceService/SearchMachines", ReplyAction="http://tempuri.org/IDeviceService/SearchMachinesResponse")]
+        ProvVe.MachineService.WindowsApp.DeviceService.MachineDto[] SearchMachines(ProvVe.MachineService.WindowsApp.DeviceService.GetMachinesRequest input);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IDeviceService/SearchMachines", ReplyAction="http://tempuri.org/IDeviceService/SearchMachinesResponse")]
+        System.IAsyncResult BeginSearchMachines(ProvVe.MachineService.WindowsApp.DeviceService.GetMachinesRequest input, System.AsyncCallback callback, object asyncState);
+        
+        ProvVe.MachineService.WindowsApp.DeviceService.MachineDto[] EndSearchMachines(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeviceService/Call", ReplyAction="http://tempuri.org/IDeviceService/CallResponse")]
+        System.Tuple<string, int, string, System.DateTime> Call(double request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IDeviceService/Call", ReplyAction="http://tempuri.org/IDeviceService/CallResponse")]
+        System.IAsyncResult BeginCall(double request, System.AsyncCallback callback, object asyncState);
+        
+        System.Tuple<string, int, string, System.DateTime> EndCall(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IDeviceServiceChannel : ProvVe.MachineService.WindowsApp.DeviceService.IDeviceService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class OpenPortCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public OpenPortCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ProvVe.MachineService.WindowsApp.DeviceService.OpenPortResponse Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ProvVe.MachineService.WindowsApp.DeviceService.OpenPortResponse)(this.results[0]));
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -49,13 +736,119 @@ namespace ProvVe.MachineService.WindowsApp.DeviceService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ResetCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public ResetCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ProvVe.MachineService.WindowsApp.DeviceService.ResetResponse Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ProvVe.MachineService.WindowsApp.DeviceService.ResetResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetMachinesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetMachinesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ProvVe.MachineService.WindowsApp.DeviceService.GetMachinesResponse Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ProvVe.MachineService.WindowsApp.DeviceService.GetMachinesResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class SearchMachinesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public SearchMachinesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ProvVe.MachineService.WindowsApp.DeviceService.MachineDto[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ProvVe.MachineService.WindowsApp.DeviceService.MachineDto[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class CallCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public CallCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Tuple<string, int, string, System.DateTime> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Tuple<string, int, string, System.DateTime>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class DeviceServiceClient : System.ServiceModel.ClientBase<ProvVe.MachineService.WindowsApp.DeviceService.IDeviceService>, ProvVe.MachineService.WindowsApp.DeviceService.IDeviceService {
+        
+        private BeginOperationDelegate onBeginOpenPortDelegate;
+        
+        private EndOperationDelegate onEndOpenPortDelegate;
+        
+        private System.Threading.SendOrPostCallback onOpenPortCompletedDelegate;
         
         private BeginOperationDelegate onBeginPingDelegate;
         
         private EndOperationDelegate onEndPingDelegate;
         
         private System.Threading.SendOrPostCallback onPingCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginResetDelegate;
+        
+        private EndOperationDelegate onEndResetDelegate;
+        
+        private System.Threading.SendOrPostCallback onResetCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetMachinesDelegate;
+        
+        private EndOperationDelegate onEndGetMachinesDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetMachinesCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginSearchMachinesDelegate;
+        
+        private EndOperationDelegate onEndSearchMachinesDelegate;
+        
+        private System.Threading.SendOrPostCallback onSearchMachinesCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginCallDelegate;
+        
+        private EndOperationDelegate onEndCallDelegate;
+        
+        private System.Threading.SendOrPostCallback onCallCompletedDelegate;
         
         public DeviceServiceClient() {
         }
@@ -76,7 +869,67 @@ namespace ProvVe.MachineService.WindowsApp.DeviceService {
                 base(binding, remoteAddress) {
         }
         
+        public event System.EventHandler<OpenPortCompletedEventArgs> OpenPortCompleted;
+        
         public event System.EventHandler<PingCompletedEventArgs> PingCompleted;
+        
+        public event System.EventHandler<ResetCompletedEventArgs> ResetCompleted;
+        
+        public event System.EventHandler<GetMachinesCompletedEventArgs> GetMachinesCompleted;
+        
+        public event System.EventHandler<SearchMachinesCompletedEventArgs> SearchMachinesCompleted;
+        
+        public event System.EventHandler<CallCompletedEventArgs> CallCompleted;
+        
+        public ProvVe.MachineService.WindowsApp.DeviceService.OpenPortResponse OpenPort(ProvVe.MachineService.WindowsApp.DeviceService.OpenPortRequest request) {
+            return base.Channel.OpenPort(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginOpenPort(ProvVe.MachineService.WindowsApp.DeviceService.OpenPortRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginOpenPort(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ProvVe.MachineService.WindowsApp.DeviceService.OpenPortResponse EndOpenPort(System.IAsyncResult result) {
+            return base.Channel.EndOpenPort(result);
+        }
+        
+        private System.IAsyncResult OnBeginOpenPort(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            ProvVe.MachineService.WindowsApp.DeviceService.OpenPortRequest request = ((ProvVe.MachineService.WindowsApp.DeviceService.OpenPortRequest)(inValues[0]));
+            return this.BeginOpenPort(request, callback, asyncState);
+        }
+        
+        private object[] OnEndOpenPort(System.IAsyncResult result) {
+            ProvVe.MachineService.WindowsApp.DeviceService.OpenPortResponse retVal = this.EndOpenPort(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnOpenPortCompleted(object state) {
+            if ((this.OpenPortCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.OpenPortCompleted(this, new OpenPortCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void OpenPortAsync(ProvVe.MachineService.WindowsApp.DeviceService.OpenPortRequest request) {
+            this.OpenPortAsync(request, null);
+        }
+        
+        public void OpenPortAsync(ProvVe.MachineService.WindowsApp.DeviceService.OpenPortRequest request, object userState) {
+            if ((this.onBeginOpenPortDelegate == null)) {
+                this.onBeginOpenPortDelegate = new BeginOperationDelegate(this.OnBeginOpenPort);
+            }
+            if ((this.onEndOpenPortDelegate == null)) {
+                this.onEndOpenPortDelegate = new EndOperationDelegate(this.OnEndOpenPort);
+            }
+            if ((this.onOpenPortCompletedDelegate == null)) {
+                this.onOpenPortCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnOpenPortCompleted);
+            }
+            base.InvokeAsync(this.onBeginOpenPortDelegate, new object[] {
+                        request}, this.onEndOpenPortDelegate, this.onOpenPortCompletedDelegate, userState);
+        }
         
         public System.DateTime Ping() {
             return base.Channel.Ping();
@@ -124,6 +977,206 @@ namespace ProvVe.MachineService.WindowsApp.DeviceService {
                 this.onPingCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnPingCompleted);
             }
             base.InvokeAsync(this.onBeginPingDelegate, null, this.onEndPingDelegate, this.onPingCompletedDelegate, userState);
+        }
+        
+        public ProvVe.MachineService.WindowsApp.DeviceService.ResetResponse Reset(ProvVe.MachineService.WindowsApp.DeviceService.ResetRequest input) {
+            return base.Channel.Reset(input);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginReset(ProvVe.MachineService.WindowsApp.DeviceService.ResetRequest input, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginReset(input, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ProvVe.MachineService.WindowsApp.DeviceService.ResetResponse EndReset(System.IAsyncResult result) {
+            return base.Channel.EndReset(result);
+        }
+        
+        private System.IAsyncResult OnBeginReset(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            ProvVe.MachineService.WindowsApp.DeviceService.ResetRequest input = ((ProvVe.MachineService.WindowsApp.DeviceService.ResetRequest)(inValues[0]));
+            return this.BeginReset(input, callback, asyncState);
+        }
+        
+        private object[] OnEndReset(System.IAsyncResult result) {
+            ProvVe.MachineService.WindowsApp.DeviceService.ResetResponse retVal = this.EndReset(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnResetCompleted(object state) {
+            if ((this.ResetCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.ResetCompleted(this, new ResetCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void ResetAsync(ProvVe.MachineService.WindowsApp.DeviceService.ResetRequest input) {
+            this.ResetAsync(input, null);
+        }
+        
+        public void ResetAsync(ProvVe.MachineService.WindowsApp.DeviceService.ResetRequest input, object userState) {
+            if ((this.onBeginResetDelegate == null)) {
+                this.onBeginResetDelegate = new BeginOperationDelegate(this.OnBeginReset);
+            }
+            if ((this.onEndResetDelegate == null)) {
+                this.onEndResetDelegate = new EndOperationDelegate(this.OnEndReset);
+            }
+            if ((this.onResetCompletedDelegate == null)) {
+                this.onResetCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnResetCompleted);
+            }
+            base.InvokeAsync(this.onBeginResetDelegate, new object[] {
+                        input}, this.onEndResetDelegate, this.onResetCompletedDelegate, userState);
+        }
+        
+        public ProvVe.MachineService.WindowsApp.DeviceService.GetMachinesResponse GetMachines(ProvVe.MachineService.WindowsApp.DeviceService.GetMachinesRequest input) {
+            return base.Channel.GetMachines(input);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetMachines(ProvVe.MachineService.WindowsApp.DeviceService.GetMachinesRequest input, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetMachines(input, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ProvVe.MachineService.WindowsApp.DeviceService.GetMachinesResponse EndGetMachines(System.IAsyncResult result) {
+            return base.Channel.EndGetMachines(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetMachines(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            ProvVe.MachineService.WindowsApp.DeviceService.GetMachinesRequest input = ((ProvVe.MachineService.WindowsApp.DeviceService.GetMachinesRequest)(inValues[0]));
+            return this.BeginGetMachines(input, callback, asyncState);
+        }
+        
+        private object[] OnEndGetMachines(System.IAsyncResult result) {
+            ProvVe.MachineService.WindowsApp.DeviceService.GetMachinesResponse retVal = this.EndGetMachines(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetMachinesCompleted(object state) {
+            if ((this.GetMachinesCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetMachinesCompleted(this, new GetMachinesCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetMachinesAsync(ProvVe.MachineService.WindowsApp.DeviceService.GetMachinesRequest input) {
+            this.GetMachinesAsync(input, null);
+        }
+        
+        public void GetMachinesAsync(ProvVe.MachineService.WindowsApp.DeviceService.GetMachinesRequest input, object userState) {
+            if ((this.onBeginGetMachinesDelegate == null)) {
+                this.onBeginGetMachinesDelegate = new BeginOperationDelegate(this.OnBeginGetMachines);
+            }
+            if ((this.onEndGetMachinesDelegate == null)) {
+                this.onEndGetMachinesDelegate = new EndOperationDelegate(this.OnEndGetMachines);
+            }
+            if ((this.onGetMachinesCompletedDelegate == null)) {
+                this.onGetMachinesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetMachinesCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetMachinesDelegate, new object[] {
+                        input}, this.onEndGetMachinesDelegate, this.onGetMachinesCompletedDelegate, userState);
+        }
+        
+        public ProvVe.MachineService.WindowsApp.DeviceService.MachineDto[] SearchMachines(ProvVe.MachineService.WindowsApp.DeviceService.GetMachinesRequest input) {
+            return base.Channel.SearchMachines(input);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginSearchMachines(ProvVe.MachineService.WindowsApp.DeviceService.GetMachinesRequest input, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginSearchMachines(input, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ProvVe.MachineService.WindowsApp.DeviceService.MachineDto[] EndSearchMachines(System.IAsyncResult result) {
+            return base.Channel.EndSearchMachines(result);
+        }
+        
+        private System.IAsyncResult OnBeginSearchMachines(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            ProvVe.MachineService.WindowsApp.DeviceService.GetMachinesRequest input = ((ProvVe.MachineService.WindowsApp.DeviceService.GetMachinesRequest)(inValues[0]));
+            return this.BeginSearchMachines(input, callback, asyncState);
+        }
+        
+        private object[] OnEndSearchMachines(System.IAsyncResult result) {
+            ProvVe.MachineService.WindowsApp.DeviceService.MachineDto[] retVal = this.EndSearchMachines(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnSearchMachinesCompleted(object state) {
+            if ((this.SearchMachinesCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.SearchMachinesCompleted(this, new SearchMachinesCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void SearchMachinesAsync(ProvVe.MachineService.WindowsApp.DeviceService.GetMachinesRequest input) {
+            this.SearchMachinesAsync(input, null);
+        }
+        
+        public void SearchMachinesAsync(ProvVe.MachineService.WindowsApp.DeviceService.GetMachinesRequest input, object userState) {
+            if ((this.onBeginSearchMachinesDelegate == null)) {
+                this.onBeginSearchMachinesDelegate = new BeginOperationDelegate(this.OnBeginSearchMachines);
+            }
+            if ((this.onEndSearchMachinesDelegate == null)) {
+                this.onEndSearchMachinesDelegate = new EndOperationDelegate(this.OnEndSearchMachines);
+            }
+            if ((this.onSearchMachinesCompletedDelegate == null)) {
+                this.onSearchMachinesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnSearchMachinesCompleted);
+            }
+            base.InvokeAsync(this.onBeginSearchMachinesDelegate, new object[] {
+                        input}, this.onEndSearchMachinesDelegate, this.onSearchMachinesCompletedDelegate, userState);
+        }
+        
+        public System.Tuple<string, int, string, System.DateTime> Call(double request) {
+            return base.Channel.Call(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginCall(double request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginCall(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.Tuple<string, int, string, System.DateTime> EndCall(System.IAsyncResult result) {
+            return base.Channel.EndCall(result);
+        }
+        
+        private System.IAsyncResult OnBeginCall(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            double request = ((double)(inValues[0]));
+            return this.BeginCall(request, callback, asyncState);
+        }
+        
+        private object[] OnEndCall(System.IAsyncResult result) {
+            System.Tuple<string, int, string, System.DateTime> retVal = this.EndCall(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnCallCompleted(object state) {
+            if ((this.CallCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.CallCompleted(this, new CallCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void CallAsync(double request) {
+            this.CallAsync(request, null);
+        }
+        
+        public void CallAsync(double request, object userState) {
+            if ((this.onBeginCallDelegate == null)) {
+                this.onBeginCallDelegate = new BeginOperationDelegate(this.OnBeginCall);
+            }
+            if ((this.onEndCallDelegate == null)) {
+                this.onEndCallDelegate = new EndOperationDelegate(this.OnEndCall);
+            }
+            if ((this.onCallCompletedDelegate == null)) {
+                this.onCallCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnCallCompleted);
+            }
+            base.InvokeAsync(this.onBeginCallDelegate, new object[] {
+                        request}, this.onEndCallDelegate, this.onCallCompletedDelegate, userState);
         }
     }
 }

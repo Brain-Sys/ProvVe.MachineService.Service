@@ -18,13 +18,19 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:56660/DeviceService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://provvemachineserviceservice20180711094906.azurewebsites.net/DeviceService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="DeviceService.wsdl" MetadataType="Wsdl" ID="bf14c4ed-4bd9-4ddf-b19a-ad4a067f18c5" SourceId="1" SourceUrl="http://localhost:56660/DeviceService.svc?wsdl" />
-    <MetadataFile FileName="DeviceService.xsd" MetadataType="Schema" ID="350ba60f-2060-40e7-8a18-4e23d1d50482" SourceId="1" SourceUrl="http://localhost:56660/DeviceService.svc?xsd=xsd1" />
-    <MetadataFile FileName="DeviceService1.xsd" MetadataType="Schema" ID="3f3e8308-28b5-44af-81a1-f2768fb62d95" SourceId="1" SourceUrl="http://localhost:56660/DeviceService.svc?xsd=xsd0" />
-    <MetadataFile FileName="DeviceService.disco" MetadataType="Disco" ID="860d0316-5188-4179-971e-6887e3ce2689" SourceId="1" SourceUrl="http://localhost:56660/DeviceService.svc?disco" />
+    <MetadataFile FileName="DeviceService2.xsd" MetadataType="Schema" ID="94bfab6d-41da-41a8-9a4b-39e451016899" SourceId="1" SourceUrl="http://provvemachineserviceservice20180711094906.azurewebsites.net/DeviceService.svc?xsd=xsd4" />
+    <MetadataFile FileName="DeviceService21.xsd" MetadataType="Schema" ID="e20b463e-1de4-4f29-9e85-3f08a84b4787" SourceId="1" SourceUrl="http://provvemachineserviceservice20180711094906.azurewebsites.net/DeviceService.svc?xsd=xsd5" />
+    <MetadataFile FileName="DeviceService22.xsd" MetadataType="Schema" ID="bf94265a-f875-451f-a32d-323521f1c9ee" SourceId="1" SourceUrl="http://provvemachineserviceservice20180711094906.azurewebsites.net/DeviceService.svc?xsd=xsd6" />
+    <MetadataFile FileName="DeviceService23.xsd" MetadataType="Schema" ID="6c0cb05e-4930-4629-a1dc-3c463d65246a" SourceId="1" SourceUrl="http://provvemachineserviceservice20180711094906.azurewebsites.net/DeviceService.svc?xsd=xsd7" />
+    <MetadataFile FileName="DeviceService24.xsd" MetadataType="Schema" ID="88cbb379-0861-4561-943f-6d88c27363b4" SourceId="1" SourceUrl="http://provvemachineserviceservice20180711094906.azurewebsites.net/DeviceService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DeviceService25.xsd" MetadataType="Schema" ID="97a877f7-65a7-4098-a7f8-e0d31ebaeef5" SourceId="1" SourceUrl="http://provvemachineserviceservice20180711094906.azurewebsites.net/DeviceService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DeviceService26.xsd" MetadataType="Schema" ID="23a02770-1ec1-4a04-960f-fb944bd865f4" SourceId="1" SourceUrl="http://provvemachineserviceservice20180711094906.azurewebsites.net/DeviceService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DeviceService27.xsd" MetadataType="Schema" ID="4a14391b-d4c5-4a69-bf37-0f764d90f8cb" SourceId="1" SourceUrl="http://provvemachineserviceservice20180711094906.azurewebsites.net/DeviceService.svc?xsd=xsd3" />
+    <MetadataFile FileName="DeviceService1.disco" MetadataType="Disco" ID="7cd54fa4-b478-4368-bea9-4b2b66ffee61" SourceId="1" SourceUrl="http://provvemachineserviceservice20180711094906.azurewebsites.net/DeviceService.svc?disco" />
+    <MetadataFile FileName="DeviceService1.wsdl" MetadataType="Wsdl" ID="42ac912c-a626-49e5-bc37-feb5bc537e6c" SourceId="1" SourceUrl="http://provvemachineserviceservice20180711094906.azurewebsites.net/DeviceService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Requests" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Requests" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://provvemachineserviceservice20180711094906.azurewebsites.net/DeviceService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Enumerations" />
+  <xs:import schemaLocation="http://provvemachineserviceservice20180711094906.azurewebsites.net/DeviceService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:complexType name="OpenPortRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Filename" nillable="true" type="xs:string" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ProvVe.MachineService.NetworkMessages.Enumerations" name="PortName" type="q1:Ports" />
+          <xs:element minOccurs="0" name="Protocol" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OpenPortRequest" nillable="true" type="tns:OpenPortRequest" />
+  <xs:complexType name="BaseRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="ClientVersion" nillable="true" type="q2:Version" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseRequest" nillable="true" type="tns:BaseRequest" />
+  <xs:complexType name="ResetRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MachineId" type="xs:int" />
+          <xs:element minOccurs="0" name="MaxRetry" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResetRequest" nillable="true" type="tns:ResetRequest" />
+  <xs:complexType name="GetMachinesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetMachinesRequest" nillable="true" type="tns:GetMachinesRequest" />
+</xs:schema>

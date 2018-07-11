@@ -15,10 +15,22 @@ using ProvVe.MachineService.NetworkMessages.Responses;
 
 namespace ProvVe.MachineService.Service
 {
+    // PerCall : viene creata un'istanza ad ogni chiamata, meno performante ma stateless
+    // Single : istanza globale, singleton, con memoria
+    // PerSession : istanza dedicata a ciascun proxy connesso dal client
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
     public class DeviceService :
         IDeviceService,
         IDisposable
     {
+        int pingCountFromClient = 0;
+        Guid uniqueId;
+
+        public DeviceService()
+        {
+            uniqueId = Guid.NewGuid();
+        }
+
         private void debug()
         {
 #if DEBUG
@@ -28,7 +40,10 @@ namespace ProvVe.MachineService.Service
 
         public DateTime Ping()
         {
+            pingCountFromClient++;
             debug();
+            Console.WriteLine(pingCountFromClient);
+
             return DateTime.Now;
         }
 
@@ -45,6 +60,8 @@ namespace ProvVe.MachineService.Service
         public void Dispose()
         {
             // Cleanup della memoria / risorse / stream
+            Debug.WriteLine(this.uniqueId.ToString());
+            Console.WriteLine(this.uniqueId.ToString());
         }
 
         public OpenPortResponse OpenPort(OpenPortRequest request)
