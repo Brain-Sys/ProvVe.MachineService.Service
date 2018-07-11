@@ -9,8 +9,8 @@ using System.ServiceModel;
 
 namespace ProvVe.MachineService.Service
 {
-    //[ServiceContract(CallbackContract = typeof(IAlarmNotifier))]
-    [ServiceContract]
+    [ServiceContract(CallbackContract = typeof(IAlarmNotifier))]
+    //[ServiceContract]
     public interface IDeviceService : ICommunication
     {
         [OperationContract]

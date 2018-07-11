@@ -30,7 +30,23 @@ namespace ProvVe.MachineService.ConsoleHost
             host.AddServiceEndpoint(
                 typeof(IDeviceService),
                 new WSDualHttpBinding(),
-                "http://localhost:54321");
+                "http://localhost:44444");
+
+            // Check to see if the service host already has a ServiceMetadataBehavior
+            ServiceMetadataBehavior smb = host.Description.Behaviors.Find<ServiceMetadataBehavior>();
+            // If not, add one
+            if (smb == null)
+                smb = new ServiceMetadataBehavior();
+            smb.HttpGetEnabled = true;
+            smb.MetadataExporter.PolicyVersion = PolicyVersion.Policy15;
+            host.Description.Behaviors.Add(smb);
+            // Add MEX endpoint
+            host.AddServiceEndpoint(
+              ServiceMetadataBehavior.MexContractName,
+              MetadataExchangeBindings.CreateMexHttpBinding(),
+              "mex");
+            // Add application endpoint
+            host.AddServiceEndpoint(typeof(IDeviceService), new WSDualHttpBinding(), "");
 
             //var user = new ServiceAuthenticationManager();
             //host.Authentication.ServiceAuthenticationManager = user;

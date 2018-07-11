@@ -18,7 +18,7 @@ namespace ProvVe.MachineService.Service
     // PerCall : viene creata un'istanza ad ogni chiamata, meno performante ma stateless
     // Single : istanza globale, singleton, con memoria
     // PerSession : istanza dedicata a ciascun proxy connesso dal client
-    [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
     //[ServiceContract(CallbackContract = typeof(IAlarmNotifier))]
     public class DeviceService :
         IDeviceService,
@@ -31,23 +31,28 @@ namespace ProvVe.MachineService.Service
 
         public DeviceService()
         {
-            timer = new Timer(tick, null, 1000, 10000);
+            timer = new Timer(tick, null, 1000, 3000);
             uniqueId = Guid.NewGuid();
         }
 
         // "Battito" del timer
         private void tick(object parameter)
         {
+            Console.WriteLine("tick()");
+
             try
             {
                 OperationContext ctx = OperationContext.Current;
+                Console.WriteLine(ctx == null);
 
                 if (ctx != null)
                 {
-                    IAlarmNotifier channel = OperationContext.Current.GetCallbackChannel<IAlarmNotifier>();
+                    int n = rnd.Next(0, 20);
+                    Console.WriteLine("notification from server..." + n);
+                    IAlarmNotifier channel = ctx.GetCallbackChannel<IAlarmNotifier>();
                     channel.NewAlarmOccured(new NewAlarmOccurredRequest()
                     {
-                        Count = rnd.Next(0, 20)
+                        Count = n
                     });
                 }
             }
