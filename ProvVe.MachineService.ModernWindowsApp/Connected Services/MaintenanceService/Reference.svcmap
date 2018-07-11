@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="75168958-a614-4d90-96de-a697fe02b07f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.43.18:12345/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="8fbdbe56-9dd7-48c6-9d94-2aa306967e7a" SourceId="1" SourceUrl="http://192.168.43.18:12345/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="7e4aa48f-d73b-4d6e-a29e-cb3b2d34e236" SourceId="1" SourceUrl="http://192.168.43.18:12345/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="1a816b6c-eb80-4b97-bbcc-67fc9a9b222e" SourceId="1" SourceUrl="http://192.168.43.18:12345/mex" />
+    <MetadataFile FileName="Mares.Maintenance.NetworkMessages.Requests.xsd" MetadataType="Schema" ID="1f7e0bdb-0df1-4a64-989e-9c45bcd292e3" SourceId="1" SourceUrl="http://192.168.43.18:12345/mex" />
+    <MetadataFile FileName="System.xsd" MetadataType="Schema" ID="9bb1684f-c4bd-4e47-ab36-15d675a9cbd0" SourceId="1" SourceUrl="http://192.168.43.18:12345/mex" />
+    <MetadataFile FileName="Mares.Maintenance.NetworkMessages.Responses.xsd" MetadataType="Schema" ID="b5bb64b8-2b1f-49ce-bec4-b41341403e62" SourceId="1" SourceUrl="http://192.168.43.18:12345/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

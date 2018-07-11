@@ -19,16 +19,42 @@ namespace ProvVe.MachineService.Service
     // Single : istanza globale, singleton, con memoria
     // PerSession : istanza dedicata a ciascun proxy connesso dal client
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
+    //[ServiceContract(CallbackContract = typeof(IAlarmNotifier))]
     public class DeviceService :
         IDeviceService,
         IDisposable
     {
+        Timer timer;
         int pingCountFromClient = 0;
         Guid uniqueId;
+        Random rnd = new Random((int)DateTime.Now.Ticks);
 
         public DeviceService()
         {
+            timer = new Timer(tick, null, 1000, 10000);
             uniqueId = Guid.NewGuid();
+        }
+
+        // "Battito" del timer
+        private void tick(object parameter)
+        {
+            try
+            {
+                OperationContext ctx = OperationContext.Current;
+
+                if (ctx != null)
+                {
+                    IAlarmNotifier channel = OperationContext.Current.GetCallbackChannel<IAlarmNotifier>();
+                    channel.NewAlarmOccured(new NewAlarmOccurredRequest()
+                    {
+                        Count = rnd.Next(0, 20)
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
         }
 
         private void debug()

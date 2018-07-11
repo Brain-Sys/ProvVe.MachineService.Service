@@ -69,6 +69,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\MaintenanceService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -133,6 +138,25 @@
     <None Include="Connected Services\DeviceService\ProvVe.MachineService.ModernWindowsApp.DeviceService.ResetResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\MaintenanceService\Mares.Maintenance.NetworkMessages.Requests.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MaintenanceService\Mares.Maintenance.NetworkMessages.Responses.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MaintenanceService\ProvVe.MachineService.ModernWindowsApp.MaintenanceService.WelcomeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MaintenanceService\service.wsdl" />
+    <None Include="Connected Services\MaintenanceService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MaintenanceService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MaintenanceService\System.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -146,6 +170,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\DeviceService\" />
+    <WCFMetadataStorage Include="Connected Services\MaintenanceService\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\DeviceService\DeviceService.disco" />
@@ -158,6 +183,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\DeviceService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MaintenanceService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MaintenanceService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MaintenanceService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

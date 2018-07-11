@@ -22,10 +22,15 @@ namespace ProvVe.MachineService.ConsoleHost
 
             //Type bindingType = Type.GetType("System.ServiceModel.NetTcpBinding, System.ServiceModel");
             //Binding bnd = Activator.CreateInstance(bindingType) as Binding;
+            //host.AddServiceEndpoint(
+            //    typeof(IDeviceService),
+            //    new NetTcpBinding(),
+            //    "net.tcp://TRAPPIST/DeviceService.svc");
+
             host.AddServiceEndpoint(
                 typeof(IDeviceService),
-                new NetTcpBinding(),
-                "net.tcp://TRAPPIST/DeviceService.svc");
+                new WSDualHttpBinding(),
+                "http://localhost:54321");
 
             //var user = new ServiceAuthenticationManager();
             //host.Authentication.ServiceAuthenticationManager = user;

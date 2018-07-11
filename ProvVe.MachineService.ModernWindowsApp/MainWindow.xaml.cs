@@ -6,6 +6,8 @@ using System;
 using System.Runtime.Serialization;
 using System.IO;
 using System.Runtime.Serialization.Json;
+using ProvVe.MachineService.ModernWindowsApp.MaintenanceService;
+using System.Net;
 
 namespace ProvVe.MachineService.ModernWindowsApp
 {
@@ -14,7 +16,7 @@ namespace ProvVe.MachineService.ModernWindowsApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        IDeviceService client = new DeviceServiceClient("NetTcpTest");
+        IDeviceService client = new DeviceServiceClient("DualHttp");
 
         public MainWindow()
         {
@@ -76,6 +78,23 @@ namespace ProvVe.MachineService.ModernWindowsApp
             
             var response = await client.GetMachinesAsync(request);
             MessageBox.Show(response.Success.ToString());
+        }
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                MaintenanceService.MaintenanceServiceClient client =
+                new MaintenanceService.MaintenanceServiceClient(
+                    "WSHttpBinding_IMaintenanceService", "HTTP://192.168.43.18:12345");
+
+                var response = await client.WelcomeMethodAsync(new WelcomeRequest());
+                MessageBox.Show(response.WelcomeMessage);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

@@ -9,6 +9,7 @@
     <Grid>
         <Button x:Name="btnCallWcf" Content="Modern Call WCF" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="186" Height="95" Click="btnCallWcf_Click"/>
         <Button x:Name="btnReset" Content="RESET" HorizontalAlignment="Left" Margin="201,10,0,0" VerticalAlignment="Top" Width="204" Height="95" Click="btnReset_Click"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Width="130" Height="40" Click="Button_Click"/>
 
     </Grid>
 </Window>
